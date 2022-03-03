@@ -1,0 +1,7 @@
+@import "src/mixins/list";
+@import "src/mixins/scroll";
+
+.notifies {
+  @include list;
+  @include scroll;
+}

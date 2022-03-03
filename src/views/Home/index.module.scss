@@ -1,0 +1,54 @@
+.home {
+  max-height: 100%;
+
+  display: grid;
+  gap: 2%;
+  grid-template-areas:
+    "home1 home4 home5"
+    "home2 home4 home5"
+    "home3 home4 home5";
+  grid-auto-rows: minmax(60px, auto);
+
+  @media screen and (max-width: 1100px) {
+    grid-template-areas:
+    "home1 home5"
+    "home4 home5"
+    "home4 home5";
+    grid-template-columns: repeat(2, 1fr);
+
+    @for $i from 2 through 3 {
+      & > *:nth-child(#{$i}) {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    grid-template-areas:
+    "home1"
+    "home4"
+    "home4";
+    grid-template-columns: 1fr;
+
+    & > *:nth-child(5) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-height: 600px) and (min-width: 1101px) {
+    grid-template-areas:
+    "home1 home4 home5"
+    "home3 home4 home5"
+    "home3 home4 home5";
+
+    & > *:nth-child(2) {
+      display: none;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    & > *:nth-child(#{$i}) {
+      grid-area: home#{$i};
+    }
+  }
+}

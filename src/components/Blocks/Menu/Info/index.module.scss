@@ -1,0 +1,36 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 20px;
+
+  &__info {
+    flex-grow: 1;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 37px;
+  }
+
+  &__status {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &:after {
+    content: "";
+    background: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: -10%;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+  }
+}

@@ -1,0 +1,13 @@
+@import "src/mixins/screen-center";
+
+.login {
+  @include screen-center;
+
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}

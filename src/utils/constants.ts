@@ -1,0 +1,1 @@
+export type MESSAGE_STATUS = "SENT" | "DELIVERED" | "READ" | "MISSED";

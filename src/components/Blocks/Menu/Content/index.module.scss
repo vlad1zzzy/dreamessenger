@@ -1,0 +1,9 @@
+@import "src/mixins/list";
+@import "src/mixins/scroll";
+
+.content {
+  @include list;
+  @include scroll;
+
+  padding: 20px 40px;
+}

@@ -1,0 +1,21 @@
+.backdrop {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.backdrop:hover {
+  cursor: pointer;
+  box-shadow: 0 0 3px rgba(33,33,33,.2);
+}
+
+.backdrop:active {
+  transform: scale(0.98);
+}

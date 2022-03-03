@@ -1,0 +1,28 @@
+.settings {
+  max-height: 100%;
+
+  display: grid;
+  gap: 2%;
+  grid-template-areas:
+    "settings1 settings1"
+    "settings2 settings3";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    grid-template-areas:
+            "settings1 settings1"
+            "settings2 settings2";
+
+    & > *:nth-child(3) {
+      display: none;
+    }
+  }
+
+  @for $i from 1 through 3 {
+    & > *:nth-child(#{$i}) {
+      grid-area: settings#{$i};
+    }
+  }
+}

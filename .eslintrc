@@ -1,0 +1,36 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "no-unused-vars": 0,
+    "react/function-component-definition": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  },
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  }
+}

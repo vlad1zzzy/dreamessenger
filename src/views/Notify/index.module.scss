@@ -1,0 +1,17 @@
+.notify {
+  max-height: 100%;
+
+  display: grid;
+  gap: 2%;
+  grid-template-areas:
+    "notify1"
+    "notify2";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 1fr;
+
+  @for $i from 1 through 2 {
+    & > *:nth-child(#{$i}) {
+      grid-area: notify#{$i};
+    }
+  }
+}
