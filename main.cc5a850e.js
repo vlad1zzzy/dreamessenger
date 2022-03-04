@@ -214,7 +214,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\n/* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.module.scss */ \"./src/components/UI/Icon/index.module.scss\");\nvar __assign = undefined && undefined.__assign || function () {\n  __assign = Object.assign || function (t) {\n    for (var s, i = 1, n = arguments.length; i < n; i++) {\n      s = arguments[i];\n\n      for (var p in s) {\n        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];\n      }\n    }\n\n    return t;\n  };\n\n  return __assign.apply(this, arguments);\n};\n\n\n\n\nvar Icon = function Icon(_a) {\n  var name = _a.name,\n      size = _a.size;\n  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"svg\", __assign({\n    className: \"\".concat(_index_module_scss__WEBPACK_IMPORTED_MODULE_1__[\"default\"].icon, \" \").concat(size && _index_module_scss__WEBPACK_IMPORTED_MODULE_1__[\"default\"][\"icon--\".concat(size)]),\n    xmlns: \"http://www.w3.org/2000/svg\"\n  }, {\n    children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"use\", {\n      href: \"./assets/icons/_sprite.svg#icon-\".concat(name, \"-usage\"),\n      xlinkHref: \"./assets/icons/_sprite.svg#icon-\".concat(name, \"-usage\")\n    }, void 0)\n  }), void 0);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Icon);\n\n//# sourceURL=webpack://messenger/./src/components/UI/Icon/index.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\n/* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.module.scss */ \"./src/components/UI/Icon/index.module.scss\");\nvar __assign = undefined && undefined.__assign || function () {\n  __assign = Object.assign || function (t) {\n    for (var s, i = 1, n = arguments.length; i < n; i++) {\n      s = arguments[i];\n\n      for (var p in s) {\n        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];\n      }\n    }\n\n    return t;\n  };\n\n  return __assign.apply(this, arguments);\n};\n\n\n\n\nvar Icon = function Icon(_a) {\n  var name = _a.name,\n      size = _a.size;\n  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"svg\", __assign({\n    className: \"\".concat(_index_module_scss__WEBPACK_IMPORTED_MODULE_1__[\"default\"].icon, \" \").concat(size && _index_module_scss__WEBPACK_IMPORTED_MODULE_1__[\"default\"][\"icon--\".concat(size)]),\n    xmlns: \"http://www.w3.org/2000/svg\"\n  }, {\n    children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(\"use\", {\n      href: \"assets/icons/_sprite.svg#icon-\".concat(name, \"-usage\"),\n      xlinkHref: \"assets/icons/_sprite.svg#icon-\".concat(name, \"-usage\")\n    }, void 0)\n  }), void 0);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Icon);\n\n//# sourceURL=webpack://messenger/./src/components/UI/Icon/index.tsx?");
 
 /***/ }),
 
@@ -335,7 +335,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.scss */ \"./src/index.scss\");\n/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App */ \"./src/App.tsx\");\n/* harmony import */ var _utils_svg_loader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/svg-loader */ \"./src/utils/svg-loader.js\");\n/* harmony import */ var _utils_svg_loader__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_utils_svg_loader__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/index.js\");\n/* eslint-disable no-undef */\n\n\n\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.HashRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_App__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null)), document.getElementById('root'));\n\n//# sourceURL=webpack://messenger/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/index.js\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.scss */ \"./src/index.scss\");\n/* harmony import */ var _utils_svg_loader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/svg-loader */ \"./src/utils/svg-loader.js\");\n/* harmony import */ var _utils_svg_loader__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_utils_svg_loader__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./App */ \"./src/App.tsx\");\n/* eslint-disable no-undef */\n\n\n\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.HashRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_App__WEBPACK_IMPORTED_MODULE_4__[\"default\"], null)), document.getElementById('root'));\n\n//# sourceURL=webpack://messenger/./src/index.js?");
 
 /***/ }),
 
@@ -1148,7 +1148,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-account-usage\",\n      viewBox: \"0 0 26 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-account-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/account.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-account-usage\",\n      viewBox: \"0 0 26 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-account-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/account.svg?");
 
 /***/ }),
 
@@ -1159,7 +1159,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-add-photo-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-add-photo-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/add-photo.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-add-photo-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-add-photo-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/add-photo.svg?");
 
 /***/ }),
 
@@ -1170,7 +1170,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-backup-usage\",\n      viewBox: \"0 0 25 17\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-backup-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/backup.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-backup-usage\",\n      viewBox: \"0 0 25 17\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-backup-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/backup.svg?");
 
 /***/ }),
 
@@ -1181,7 +1181,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-camera-usage\",\n      viewBox: \"0 0 20 15\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-camera-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/camera.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-camera-usage\",\n      viewBox: \"0 0 20 15\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-camera-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/camera.svg?");
 
 /***/ }),
 
@@ -1192,7 +1192,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-change-usage\",\n      viewBox: \"0 0 24 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-change-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/change.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-change-usage\",\n      viewBox: \"0 0 24 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-change-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/change.svg?");
 
 /***/ }),
 
@@ -1203,7 +1203,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-delete-usage\",\n      viewBox: \"0 0 25 27\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-delete-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/delete.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-delete-usage\",\n      viewBox: \"0 0 25 27\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-delete-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/delete.svg?");
 
 /***/ }),
 
@@ -1214,7 +1214,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-edit-usage\",\n      viewBox: \"0 0 28 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-edit-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/edit.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-edit-usage\",\n      viewBox: \"0 0 28 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-edit-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/edit.svg?");
 
 /***/ }),
 
@@ -1225,7 +1225,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-emoji-usage\",\n      viewBox: \"0 0 15 15\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-emoji-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/emoji.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-emoji-usage\",\n      viewBox: \"0 0 15 15\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-emoji-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/emoji.svg?");
 
 /***/ }),
 
@@ -1236,7 +1236,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-help-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-help-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/help.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-help-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-help-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/help.svg?");
 
 /***/ }),
 
@@ -1247,7 +1247,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-home-usage\",\n      viewBox: \"0 0 47 44\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-home-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/home.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-home-usage\",\n      viewBox: \"0 0 47 44\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-home-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/home.svg?");
 
 /***/ }),
 
@@ -1258,7 +1258,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-invite-usage\",\n      viewBox: \"0 0 20 21\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-invite-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/invite.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-invite-usage\",\n      viewBox: \"0 0 20 21\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-invite-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/invite.svg?");
 
 /***/ }),
 
@@ -1269,7 +1269,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-language-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-language-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/language.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-language-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-language-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/language.svg?");
 
 /***/ }),
 
@@ -1280,7 +1280,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-message-usage\",\n      viewBox: \"0 0 25 24\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-message-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/message.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-message-usage\",\n      viewBox: \"0 0 25 24\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-message-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/message.svg?");
 
 /***/ }),
 
@@ -1291,7 +1291,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-messages-usage\",\n      viewBox: \"0 0 54 54\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-messages-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/messages.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-messages-usage\",\n      viewBox: \"0 0 54 54\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-messages-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/messages.svg?");
 
 /***/ }),
 
@@ -1302,7 +1302,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-microphone-usage\",\n      viewBox: \"0 0 490.9 490.9\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-microphone-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/microphone.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-microphone-usage\",\n      viewBox: \"0 0 490.9 490.9\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-microphone-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/microphone.svg?");
 
 /***/ }),
 
@@ -1313,7 +1313,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-notification-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-notification-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/notification.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-notification-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-notification-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/notification.svg?");
 
 /***/ }),
 
@@ -1324,7 +1324,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-notify-usage\",\n      viewBox: \"0 0 47 51\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-notify-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/notify.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-notify-usage\",\n      viewBox: \"0 0 47 51\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-notify-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/notify.svg?");
 
 /***/ }),
 
@@ -1335,7 +1335,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-online-usage\",\n      viewBox: \"0 0 23 23\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-online-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/online.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-online-usage\",\n      viewBox: \"0 0 23 23\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-online-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/online.svg?");
 
 /***/ }),
 
@@ -1346,7 +1346,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-options-usage\",\n      viewBox: \"0 0 4 20\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-options-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/options.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-options-usage\",\n      viewBox: \"0 0 4 20\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-options-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/options.svg?");
 
 /***/ }),
 
@@ -1357,7 +1357,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-outdoor-usage\",\n      viewBox: \"0 0 54 58\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-outdoor-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/outdoor.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-outdoor-usage\",\n      viewBox: \"0 0 54 58\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-outdoor-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/outdoor.svg?");
 
 /***/ }),
 
@@ -1368,7 +1368,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-phone-usage\",\n      viewBox: \"0 0 20 20\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-phone-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/phone.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-phone-usage\",\n      viewBox: \"0 0 20 20\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-phone-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/phone.svg?");
 
 /***/ }),
 
@@ -1379,7 +1379,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-photo-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-photo-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/photo.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-photo-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-photo-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/photo.svg?");
 
 /***/ }),
 
@@ -1390,7 +1390,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-privacy-usage\",\n      viewBox: \"0 0 21 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-privacy-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/privacy.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-privacy-usage\",\n      viewBox: \"0 0 21 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-privacy-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/privacy.svg?");
 
 /***/ }),
 
@@ -1401,7 +1401,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-profile-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-profile-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/profile.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-profile-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-profile-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/profile.svg?");
 
 /***/ }),
 
@@ -1412,7 +1412,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-qrcode-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-qrcode-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/qrcode.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-qrcode-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-qrcode-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/qrcode.svg?");
 
 /***/ }),
 
@@ -1423,7 +1423,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-search-usage\",\n      viewBox: \"0 0 21 21\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-search-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/search.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-search-usage\",\n      viewBox: \"0 0 21 21\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-search-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/search.svg?");
 
 /***/ }),
 
@@ -1434,7 +1434,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-security-usage\",\n      viewBox: \"0 0 21 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-security-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/security.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-security-usage\",\n      viewBox: \"0 0 21 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-security-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/security.svg?");
 
 /***/ }),
 
@@ -1445,7 +1445,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-send-and-watched-usage\",\n      viewBox: \"0 0 24 23\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-send-and-watched-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/send-and-watched.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-send-and-watched-usage\",\n      viewBox: \"0 0 24 23\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-send-and-watched-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/send-and-watched.svg?");
 
 /***/ }),
 
@@ -1456,7 +1456,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-send-end-usage\",\n      viewBox: \"0 0 18 16\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-send-end-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/send-end.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-send-end-usage\",\n      viewBox: \"0 0 18 16\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-send-end-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/send-end.svg?");
 
 /***/ }),
 
@@ -1467,7 +1467,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-send-start-usage\",\n      viewBox: \"0 0 21 19\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-send-start-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/send-start.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-send-start-usage\",\n      viewBox: \"0 0 21 19\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-send-start-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/send-start.svg?");
 
 /***/ }),
 
@@ -1478,7 +1478,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-settings-usage\",\n      viewBox: \"0 0 46 46\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-settings-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/settings.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-settings-usage\",\n      viewBox: \"0 0 46 46\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-settings-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/settings.svg?");
 
 /***/ }),
 
@@ -1489,7 +1489,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-snake-usage\",\n      viewBox: \"0 0 14 13\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-snake-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/snake.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-snake-usage\",\n      viewBox: \"0 0 14 13\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-snake-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/snake.svg?");
 
 /***/ }),
 
@@ -1500,7 +1500,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-status-usage\",\n      viewBox: \"0 0 26 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-status-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/status.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-status-usage\",\n      viewBox: \"0 0 26 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-status-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/status.svg?");
 
 /***/ }),
 
@@ -1511,7 +1511,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-theme-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-theme-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/theme.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-theme-usage\",\n      viewBox: \"0 0 25 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-theme-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/theme.svg?");
 
 /***/ }),
 
@@ -1522,7 +1522,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-verification-usage\",\n      viewBox: \"0 0 29 25\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-verification-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/verification.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-verification-usage\",\n      viewBox: \"0 0 29 25\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-verification-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/verification.svg?");
 
 /***/ }),
 
@@ -1533,7 +1533,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-videocamera-usage\",\n      viewBox: \"0 0 29 20\",\n      url: \"./assets/icons/\" + \"_sprite.svg#icon-videocamera-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/videocamera.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n      id: \"icon-videocamera-usage\",\n      viewBox: \"0 0 29 20\",\n      url: \"assets/icons/\" + \"_sprite.svg#icon-videocamera-usage\",\n      toString: function () {\n        return this.url;\n      }\n    });\n\n//# sourceURL=webpack://messenger/./src/assets/icons/videocamera.svg?");
 
 /***/ }),
 
