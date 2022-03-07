@@ -12,15 +12,11 @@ interface SidebarI {
 
 const Sidebar: React.FC<SidebarI> = ({removeUser}) => {
 
-    const logout = async () => {
-        removeUser();
-    }
-
     return (
         <div className={classes.sidebar}>
-            <Avatar id={"01"} size={"big"}/>
+            <Avatar id={"01"} size={"big"} />
             <Nav />
-            <Pressable iconName={"outdoor"} size={"big"} onClick={logout}/>
+            <Pressable iconName={"outdoor"} size={"big"} onClick={removeUser} />
         </div>
     );
 }

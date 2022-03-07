@@ -4,7 +4,7 @@ import Content from "./Content";
 import Block from "../../UI/Block";
 import Info from "./Info";
 import Header from "../../UI/Header";
-import {SETTINGS_TYPE} from "../../../store/temp";
+import { SETTINGS_TYPE } from "../../../store/temp";
 
 interface MenuI {
     title: string;
@@ -15,9 +15,9 @@ interface MenuI {
 const Menu: React.FC<MenuI> = ({title, withHeader, settings}) => {
     return (
         <Block>
-            <Header title={title}/>
-            {withHeader && <Info/>}
-            <Content settings={settings}/>
+            <Header title={title} />
+            {withHeader && <Info />}
+            <Content settings={settings} />
         </Block>
     );
 };

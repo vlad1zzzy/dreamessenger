@@ -8,7 +8,7 @@ const Loader: React.FC = ({}) => {
         <div className={classes.loader}>
             <div>
                 <div>
-                    <div/>
+                    <div />
                 </div>
             </div>
         </div>

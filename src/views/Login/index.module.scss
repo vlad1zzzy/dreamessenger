@@ -3,11 +3,115 @@
 .login {
   @include screen-center;
 
+  &__title {
+    font-size: 55px;
+    color: #1A66FF;
+    font-weight: 700;
+    text-align: center;
+    font-family: Hack, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(100deg, #FFF, #1A66FF, #FFF) no-repeat;
+    letter-spacing: 5px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 80%;
+    animation: shine 7s linear infinite;
+
+    margin-top: 100px;
+
+    @media screen and (max-width: 700px) {
+      font-size: 30px;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 20px;
+    }
+
+    @media screen and (max-height: 560px) {
+      margin: 0;
+    }
+  }
 
   &__form {
+    //position: absolute;
+    //top: 50%;
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 10px;
+
+    border-radius: 10px;
+    max-width: 360px;
+    width: 360px;
+    margin-top: 20px;
+    z-index: 2;
+
+    @media screen and (max-width: 480px) {
+      width: 240px;
+    }
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+
+    @media screen and (max-height: 480px) {
+      display: none;
+    }
+  }
+
+  &__field {
+    width: 100%;
+  }
+
+  &__input {
+    outline: 0;
+    border: 0;
+    background: #f2f2f2;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:focus {
+      background: #dbdbdb;
+    }
+  }
+
+  &__button {
+    text-transform: uppercase;
+    outline: 0;
+    border: 0;
+    background: #1A66FF;
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all ease;
+    transition: all ease;
+    cursor: pointer;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &:visited {
+      color: #193c7e;
+    }
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position-x: -500%;
+  }
+  100% {
+    background-position-x: 500%;
   }
 }

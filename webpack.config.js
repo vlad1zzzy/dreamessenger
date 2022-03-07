@@ -23,7 +23,7 @@ module.exports = _ => ({
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: "[name].[contenthash:8].js",
-        publicPath: '/',
+        publicPath: '',
     },
     devServer: {
         static: resolveAppPath('public'),
@@ -77,7 +77,7 @@ module.exports = _ => ({
                         options: {
                             extract: true,
                             symbolId: 'icon-[name]',
-                            publicPath: '/assets/icons/',
+                            publicPath: 'assets/icons/',
                             spriteFilename: '_sprite.svg'
                         }
                     }
@@ -96,13 +96,14 @@ module.exports = _ => ({
                 ],
             },
             {
-                test: /\.(woff|woff2|eot|ttf)$/,
+                test: /\.ttf$/,
                 include: path.resolve(__dirname, 'src'),
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
                             limit: 100000,
+                            name: 'assets/fonts/[hash]-[name].ttf',
                         },
                     },
                 ],

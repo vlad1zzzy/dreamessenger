@@ -5,7 +5,7 @@ import Notifies from "../../components/Blocks/Notifies";
 
 import classes from './index.module.scss';
 
-import {NOTIFIES} from "../../store/temp";
+import { NOTIFIES } from "../../store/temp";
 
 interface NotifyI {
 
@@ -15,8 +15,8 @@ const Notify: React.FC<NotifyI> = ({}) => {
 
     return (
         <div className={classes.notify}>
-            <SearchInput/>
-            <Notifies content={NOTIFIES}/>
+            <SearchInput />
+            <Notifies content={NOTIFIES} />
         </div>
     );
 };

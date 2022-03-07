@@ -23,13 +23,13 @@
     display: none;
   }
 
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 500px) {
     display: block;
     height: 60px;
     padding: 0;
 
     & > *:nth-child(1) {
-     display: none;
+      display: none;
     }
 
     & > *:nth-child(3) {

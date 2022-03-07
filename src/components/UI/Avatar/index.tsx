@@ -15,8 +15,8 @@ const Avatar: React.FC<AvatarI> = ({id, size = "default", online = false}) => {
 
     return (
         <div className={`${classes.avatar} ${classes[`avatar_${size}`]}`}>
-            <img className={classes.avatar__img} src={img} alt="Avatar"/>
-            {online && <Icon name="online"/>}
+            <img className={classes.avatar__img} src={img} alt="Avatar" />
+            {online && <Icon name="online" />}
         </div>
     );
 };

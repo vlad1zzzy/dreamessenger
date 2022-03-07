@@ -1,6 +1,4 @@
 import React from 'react';
-
-import classes from "./index.module.scss";
 import Block from "../../UI/Block";
 
 

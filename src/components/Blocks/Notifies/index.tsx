@@ -3,7 +3,7 @@ import React from 'react';
 import Row from "../../Row";
 import Block from "../../UI/Block";
 
-import {NOTIFY} from "../../../store/temp";
+import { NOTIFY } from "../../../store/temp";
 
 import classes from "./index.module.scss";
 
@@ -17,7 +17,7 @@ const Notifies: React.FC<NotifiesI> = ({content}) => {
         <Block>
             <div className={classes.notifies}>
                 {content.map((el) => (
-                    <Row content={{...el, path: '/notify/:id', icon: 'notification'}} key={el.id}/>
+                    <Row content={{...el, path: '/notify/:id', icon: 'notification'}} key={el.id} />
                 ))}
             </div>
         </Block>
