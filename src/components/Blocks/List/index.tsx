@@ -11,7 +11,7 @@ interface ListI {
     content: BLOCK_CONTENT_TYPE[],
 }
 
-const List: React.FC<ListI> = ({title, content}) => {
+const List: React.FC<ListI> = ({ title, content }) => {
     return (
         <Block>
             <Header title={title} iconName={"options"} />

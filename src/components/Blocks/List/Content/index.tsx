@@ -11,8 +11,8 @@ interface ContentI {
     content: BLOCK_CONTENT_TYPE[];
 }
 
-const Content: React.FC<ContentI> = ({content}) => {
-    const {scrollTop, onScroll} = useScrollTop();
+const Content: React.FC<ContentI> = ({ content }) => {
+    const { scrollTop, onScroll } = useScrollTop();
 
     return (
         <div
@@ -22,6 +22,6 @@ const Content: React.FC<ContentI> = ({content}) => {
             {content.map((item, id) => (<Row key={item.title + id} content={item} />))}
         </div>
     );
-}
+};
 
 export default Content;

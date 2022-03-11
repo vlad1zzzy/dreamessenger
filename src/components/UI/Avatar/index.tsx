@@ -11,7 +11,7 @@ interface AvatarI {
     online?: boolean,
 }
 
-const Avatar: React.FC<AvatarI> = ({id, size = "default", online = false}) => {
+const Avatar: React.FC<AvatarI> = ({ id, size = "default", online = false }) => {
 
     return (
         <div className={`${classes.avatar} ${classes[`avatar_${size}`]}`}>

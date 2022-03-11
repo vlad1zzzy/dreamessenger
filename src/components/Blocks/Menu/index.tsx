@@ -12,7 +12,7 @@ interface MenuI {
     settings: SETTINGS_TYPE[];
 }
 
-const Menu: React.FC<MenuI> = ({title, withHeader, settings}) => {
+const Menu: React.FC<MenuI> = ({ title, withHeader, settings }) => {
     return (
         <Block>
             <Header title={title} />

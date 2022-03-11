@@ -5,13 +5,16 @@ import classes from "./index.module.scss";
 
 const Loader: React.FC = ({}) => {
     return (
-        <div className={classes.loader}>
-            <div>
+        <>
+            <div className={classes.background} />
+            <div className={classes.loader}>
                 <div>
-                    <div />
+                    <div>
+                        <div />
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

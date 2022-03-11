@@ -9,7 +9,7 @@ interface ContentI {
     settings: SETTINGS_TYPE[];
 }
 
-const Content: React.FC<ContentI> = ({settings}) => {
+const Content: React.FC<ContentI> = ({ settings }) => {
 
     return (
         <div className={classes.content}>
@@ -17,6 +17,6 @@ const Content: React.FC<ContentI> = ({settings}) => {
         </div>
 
     );
-}
+};
 
 export default Content;

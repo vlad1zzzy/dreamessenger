@@ -4,13 +4,13 @@ import classes from "./index.module.scss";
 import Avatar from "../../../../UI/Avatar";
 import Icon from "../../../../UI/Icon";
 
-import { BLOCK_CONTENT_TYPE } from "../../../../../store/temp"
+import { BLOCK_CONTENT_TYPE } from "../../../../../store/temp";
 
 interface RowI {
     content: BLOCK_CONTENT_TYPE;
 }
 
-const Row: React.FC<RowI> = ({content}) => {
+const Row: React.FC<RowI> = ({ content }) => {
     return (
         <div className={classes.row}>
             <Avatar id={content.avatar} online={content.online} />
@@ -24,6 +24,6 @@ const Row: React.FC<RowI> = ({content}) => {
             </div>
         </div>
     );
-}
+};
 
 export default Row;

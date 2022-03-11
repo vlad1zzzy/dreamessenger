@@ -4,11 +4,11 @@ export const useScrollTop = () => {
     const [scrollTop, setScrollTop] = useState(0);
 
     const onScroll: React.UIEventHandler<HTMLDivElement> = (event) => {
-        setScrollTop((<HTMLDivElement>event.target).scrollTop)
+        setScrollTop((<HTMLDivElement>event.target).scrollTop);
     };
 
     return {
         scrollTop,
         onScroll,
     };
-}
+};

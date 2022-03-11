@@ -10,7 +10,7 @@ interface HeaderI {
     iconName?: string,
 }
 
-const Header: React.FC<HeaderI> = ({title, iconName}) => {
+const Header: React.FC<HeaderI> = ({ title, iconName }) => {
     return (
         <div className={classes.header}>
             <Title title={title} />

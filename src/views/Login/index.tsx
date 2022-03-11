@@ -1,59 +1,88 @@
-import React, { FormEventHandler, useState } from 'react';
+import React, { FormEventHandler, useEffect, useState } from 'react';
 
 import classes from './index.module.scss';
 import Block from "../../components/UI/Block";
-import lock from "../../assets/icons/lock.svg";
 import Cubes from "../../components/UI/Cubes";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../store";
-import { loginUser } from "../../store/slices/user";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store";
+import { clearError, loginUser, RegisterCredentials, registerUser, UserCredentials } from "../../store/slices/user";
+import Icon from "../../components/UI/Icon";
+import Error from "../../components/UI/Error";
 
 interface LoginI {
-    setUser: (_: string) => void;
     isLogin: boolean;
 }
 
+const initialUserState = {
+    firstName: '',
+    lastName: '',
+    username: '',
+    password: '',
+};
 
-const Login: React.FC<LoginI> = ({setUser, isLogin}) => {
-    const [username, setUserName] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
 
+const Login: React.FC<LoginI> = ({ isLogin }) => {
+    const [userState, setUserState] = useState<RegisterCredentials>(initialUserState);
+    const { error } = useSelector((state: RootState) => state.user);
     const dispatch = useDispatch<AppDispatch>();
 
     const handleSubmit: FormEventHandler = async (event) => {
-        // event.preventDefault();
-        // const token = await loginUser({
-        //     username,
-        //     password
-        // });
-        // setUser(token);
-        dispatch(loginUser({
-            username,
-            password,
-        }))
-    }
+        event.preventDefault();
+        if (!isLogin) {
+            await dispatch(registerUser(userState));
+        } else {
+            const { username, password } = userState;
+            dispatch(loginUser({
+                username,
+                password,
+            }));
+        }
+    };
 
-    const onNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setUserName(event.target.value);
-    }
+    useEffect(() => {
+        if (error) {
+            setUserState({
+                ...userState,
+                password: "",
+            });
 
-    const onPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(event.target.value);
-    }
+            const id = setTimeout(() => {
+                dispatch(clearError());
+            }, 3000);
+            return () => {
+                clearTimeout(id);
+            };
+        }
+    }, [error]);
+
+    const onUserChange = (field: keyof RegisterCredentials) => (event: React.ChangeEvent<HTMLInputElement>) => {
+        setUserState({
+            ...userState,
+            [field]: event.target.value
+        });
+    };
 
     const nameAndSurnameFields = (
         <>
             <label className={classes.login__field}>
-                <input className={classes.login__input} type="text" onChange={onNameChange}
-                       placeholder="Name" maxLength={30} />
+                <input
+                    className={classes.login__input}
+                    type="text"
+                    onChange={onUserChange("firstName")}
+                    value={userState.firstName}
+                    placeholder="Name" />
             </label>
             <label className={classes.login__field}>
-                <input className={classes.login__input} type="text" onChange={onPasswordChange}
-                       placeholder="Surname" maxLength={30} />
+                <input
+                    className={classes.login__input}
+                    type="text"
+                    onChange={onUserChange("lastName")}
+                    value={userState.lastName}
+                    placeholder="Surname" />
             </label>
         </>
-    )
+    );
 
     return (
         <div className={classes.login}>
@@ -61,15 +90,23 @@ const Login: React.FC<LoginI> = ({setUser, isLogin}) => {
                 <Cubes />
                 <h1 className={classes.login__title}>DREAMESSENGER</h1>
                 <form className={classes.login__form} onSubmit={handleSubmit}>
-                    <img className={classes.login__icon} src={lock} alt="locked" />
+                    <Icon name="lock" size="big" />
                     {!isLogin && nameAndSurnameFields}
                     <label className={classes.login__field}>
-                        <input className={classes.login__input} type="text" onChange={onNameChange}
-                               placeholder="Username" maxLength={30} />
+                        <input
+                            className={classes.login__input}
+                            type="text"
+                            onChange={onUserChange("username")}
+                            value={userState.username}
+                            placeholder="Username" />
                     </label>
                     <label className={classes.login__field}>
-                        <input className={classes.login__input} type="password" onChange={onPasswordChange}
-                               placeholder="Password" maxLength={30} />
+                        <input
+                            className={classes.login__input}
+                            type="password"
+                            onChange={onUserChange("password")}
+                            value={userState.password}
+                            placeholder="Password" />
                     </label>
                     <button className={classes.login__button} type="submit">
                         {isLogin ? "Login" : "Sign In"}
@@ -80,6 +117,7 @@ const Login: React.FC<LoginI> = ({setUser, isLogin}) => {
                         {isLogin ? "Create an account" : "I have an account"}
                     </Link>
                 </form>
+                {error && <Error message={error} />}
             </Block>
         </div>
     );

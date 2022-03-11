@@ -11,13 +11,13 @@ interface NotifiesI {
     content: NOTIFY[],
 }
 
-const Notifies: React.FC<NotifiesI> = ({content}) => {
+const Notifies: React.FC<NotifiesI> = ({ content }) => {
 
     return (
         <Block>
             <div className={classes.notifies}>
                 {content.map((el) => (
-                    <Row content={{...el, path: '/notify/:id', icon: 'notification'}} key={el.id} />
+                    <Row content={{ ...el, path: '/notify/:id', icon: 'notification' }} key={el.id} />
                 ))}
             </div>
         </Block>

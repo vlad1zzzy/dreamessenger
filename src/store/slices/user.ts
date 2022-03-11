@@ -1,83 +1,139 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import config from '../../../config.json'
-
-const {API_URL} = config;
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { axiosPrivate } from "../../utils/axios";
 
 export type UserCredentials = {
     username: string,
-    password: string,
     firstName: string,
     lastName: string,
 }
 
-export type LoginCredentials = Pick<UserCredentials, "username" | "password">
+export type LoginCredentials = {
+    username: string,
+    password: string,
+}
+
+export type RegisterCredentials = UserCredentials & LoginCredentials;
 
 export interface UserState {
     credentials: UserCredentials,
     isLoading: boolean,
     error: string,
+    isAuth: boolean,
 }
+
+export type UserTokens = {
+    access: string,
+    refresh: string,
+}
+
+const getInitialCredentials = () => {
+    let localCredentials = localStorage.getItem('userCredentials');
+    if (!localCredentials || localCredentials === 'undefined') {
+        return {
+            username: "",
+            firstName: "",
+            lastName: "",
+        };
+    }
+    const credentials = JSON.parse(localCredentials) as UserCredentials;
+    console.log(credentials, "credentials");
+
+    return credentials;
+};
 
 const initialState: UserState = {
     credentials: {
-        username: "",
-        password: "",
-        firstName: "",
-        lastName: "",
+        ...getInitialCredentials(),
     },
     isLoading: false,
     error: "",
-}
+    isAuth: Boolean(localStorage.getItem('user')),
+};
 
 export const registerUser = createAsyncThunk(
     'user/register',
-    async (credentials: UserCredentials, {rejectWithValue}) => {
+    async (credentials: RegisterCredentials, { rejectWithValue, dispatch }) => {
+        const {
+            username,
+            password,
+            firstName: first_name,
+            lastName: last_name,
+        } = credentials;
+
         try {
-            const response = await fetch(`${API_URL}/register`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(credentials)
-            })
+            const response = await axiosPrivate.post(`/auth/register/`, {
+                username,
+                password,
+                first_name,
+                last_name,
+            });
 
-            console.log(await response.json())
+            console.log(response, "REGISTER RESPONSE");
 
-            return (await response.json() as UserCredentials)
-        } catch (e) {
-            throw rejectWithValue("Failed on registration");
+            dispatch(loginUser({
+                username,
+                password,
+            }));
+
+            return {
+                username,
+                firstName: first_name,
+                lastName: last_name,
+            } as UserCredentials;
+        } catch (error) {
+            // TODO errors from response
+            // const axiosError = error as AxiosError;
+            throw rejectWithValue("Failed on register");
         }
     }
-)
+);
 
 export const loginUser = createAsyncThunk(
     'user/login',
-    async (credentials: LoginCredentials, {rejectWithValue}) => {
+    async (credentials: LoginCredentials, { rejectWithValue }) => {
         try {
-            const response = await fetch(`${API_URL}/login`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(credentials)
-            })
+            const response = await axiosPrivate.post(`/auth/token/login/`, credentials);
 
-            console.log(await response.json())
+            console.log(response, "RESPONSE LOGIN");
 
-            return (await response.json() as UserCredentials)
-        } catch (e) {
+            localStorage.setItem('user', JSON.stringify(response.data));
+
+            // TODO request for user credentials
+            return {
+                username: credentials.username,
+                firstName: "firstname (todo login)",
+                lastName: "lastName (todo login)",
+            } as UserCredentials;
+        } catch (error) {
+            // TODO errors from response
+            // const axiosError = error as AxiosError;
             throw rejectWithValue("Failed on login");
         }
     }
-)
+);
+
+export const logoutUser = createAsyncThunk(
+    'user/logout',
+    async () => {
+        localStorage.removeItem('user');
+        localStorage.removeItem('userCredentials');
+
+        return initialState.credentials;
+    }
+);
 
 
 export const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers: {},
+    reducers: {
+        clearError: (state) => {
+            state.error = '';
+        }
+    },
     extraReducers: {
         [registerUser.pending.type]: (state) => {
+            state.error = "";
             state.isLoading = true;
         },
         [registerUser.rejected.type]: (state, action: PayloadAction<string>) => {
@@ -88,8 +144,10 @@ export const userSlice = createSlice({
             state.isLoading = false;
             state.error = "";
             state.credentials = action.payload;
+            state.isAuth = true;
         },
         [loginUser.pending.type]: (state) => {
+            state.error = "";
             state.isLoading = true;
         },
         [loginUser.rejected.type]: (state, action: PayloadAction<string>) => {
@@ -100,10 +158,25 @@ export const userSlice = createSlice({
             state.isLoading = false;
             state.error = "";
             state.credentials = action.payload;
+            state.isAuth = true;
+        },
+        [logoutUser.pending.type]: (state) => {
+            state.error = "";
+            state.isLoading = true;
+        },
+        [logoutUser.rejected.type]: (state, action: PayloadAction<string>) => {
+            state.isLoading = false;
+            state.error = action.payload;
+        },
+        [logoutUser.fulfilled.type]: (state, action: PayloadAction<UserCredentials>) => {
+            state.isLoading = false;
+            state.error = "";
+            state.credentials = action.payload;
+            state.isAuth = false;
         },
     },
-})
+});
 
-export const {} = userSlice.actions
+export const { clearError } = userSlice.actions;
 
-export default userSlice.reducer
+export default userSlice.reducer;

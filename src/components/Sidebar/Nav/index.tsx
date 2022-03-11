@@ -4,7 +4,7 @@ import NavItem from "./Item";
 
 import classes from "./index.module.scss";
 
-const items = ["home", "messages", "notify", "settings"]
+const items = ["home", "messages", "notify", "settings"];
 
 interface NavI {
 
@@ -24,6 +24,6 @@ const Nav: React.FC<NavI> = ({}) => {
             </ul>
         </nav>
     );
-}
+};
 
 export default Nav;

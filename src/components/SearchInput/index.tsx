@@ -15,6 +15,6 @@ const SearchInput: React.FC = () => {
             </div>
         </Block>
     );
-}
+};
 
 export default SearchInput;

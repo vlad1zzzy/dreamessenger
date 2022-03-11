@@ -26,7 +26,7 @@ export const GROUPS: BLOCK_CONTENT_TYPE[] = [
         status: "",
         missed: 0,
     },
-]
+];
 
 export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
     {
@@ -164,7 +164,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         status: "SENT",
         missed: 0,
     },
-]
+];
 
 export type BLOCK_CONTENT_TYPE = {
     avatar: string,
@@ -222,7 +222,7 @@ export const NOTIFIES: NOTIFY[] = [
         id: 10,
         name: "How We Keep Brand Consistency in Our Visual Language — A Design System for Illustrations",
     },
-]
+];
 
 export type NOTIFY = {
     id: number,
@@ -266,7 +266,7 @@ export const PROFILE_SETTINGS: SETTINGS_TYPE[] = [
         name: "Invite",
         path: "/invite",
     },
-]
+];
 
 export const ACCOUNT_SETTINGS: SETTINGS_TYPE[] = [
     {
@@ -324,7 +324,7 @@ export const ACCOUNT_SETTINGS: SETTINGS_TYPE[] = [
         name: "Delete Account",
         path: "/delete",
     },
-]
+];
 
 export type SETTINGS_TYPE = {
     icon: string,

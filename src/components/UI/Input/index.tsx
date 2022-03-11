@@ -7,7 +7,7 @@ interface InputI {
     placeholder: string,
 }
 
-const Input: React.FC<InputI> = ({type, placeholder}) => (
+const Input: React.FC<InputI> = ({ type, placeholder }) => (
     <input className={classes.input} type={type} placeholder={placeholder} />
 );
 

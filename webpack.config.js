@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
@@ -113,4 +113,4 @@ module.exports = _ => ({
     resolve: {
         extensions: ['.js', '.ts', '.tsx']
     }
-})
+});

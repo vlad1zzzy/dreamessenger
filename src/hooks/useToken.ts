@@ -15,11 +15,11 @@ export const useToken = (tokenName: string) => {
     const removeToken = () => {
         localStorage.removeItem(tokenName);
         setUserToken(null);
-    }
+    };
 
     return {
         setToken,
         removeToken,
         token: userToken,
-    }
-}
+    };
+};

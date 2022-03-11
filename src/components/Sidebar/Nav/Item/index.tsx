@@ -9,11 +9,11 @@ interface ItemI {
     iconName: string;
 }
 
-const Item: React.FC<ItemI> = ({iconName}) => {
+const Item: React.FC<ItemI> = ({ iconName }) => {
 
     return (
         <li className={`${classes.item} ${classes["item--active"]}`}>
-            <NavLink to={iconName} className={({isActive}) => (isActive ? classes["item--active"] : '')}>
+            <NavLink to={iconName} className={({ isActive }) => (isActive ? classes["item--active"] : '')}>
                 <span className={classes.item__backdrop}>
                     <span className={classes.item__state}>
                         <Icon name={iconName} size={"medium"} />
@@ -21,7 +21,7 @@ const Item: React.FC<ItemI> = ({iconName}) => {
                 </span>
             </NavLink>
         </li>
-    )
-}
+    );
+};
 
 export default Item;

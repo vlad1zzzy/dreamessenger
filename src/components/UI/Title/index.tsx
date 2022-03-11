@@ -6,7 +6,7 @@ interface TitleI {
     title: string;
 }
 
-const Title: React.FC<TitleI> = ({title}) => {
+const Title: React.FC<TitleI> = ({ title }) => {
     return (
         <h3 className={classes.title}>
             {title}
