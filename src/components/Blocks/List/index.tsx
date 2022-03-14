@@ -15,7 +15,7 @@ const List: React.FC<ListI> = ({ title, content }) => {
     return (
         <Block>
             <Header title={title} iconName={"options"} />
-            <Content content={content} />
+            {content.length ? <Content content={content} /> : "No content yet"}
         </Block>
     );
 };

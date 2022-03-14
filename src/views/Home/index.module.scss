@@ -7,7 +7,7 @@
     "home1 home4 home5"
     "home2 home4 home5"
     "home3 home4 home5";
-  grid-auto-rows: minmax(60px, auto);
+  grid-template-rows: 60px auto auto;
 
   @media screen and (max-width: 1100px) {
     grid-template-areas:

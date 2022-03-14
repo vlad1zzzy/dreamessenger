@@ -9,6 +9,7 @@ import { AppDispatch, RootState } from "../../store";
 import { clearError, loginUser, RegisterCredentials, registerUser, UserCredentials } from "../../store/slices/user";
 import Icon from "../../components/UI/Icon";
 import Error from "../../components/UI/Error";
+import { useError } from "../../hooks/useError";
 
 interface LoginI {
     isLogin: boolean;
@@ -40,21 +41,12 @@ const Login: React.FC<LoginI> = ({ isLogin }) => {
         }
     };
 
-    useEffect(() => {
-        if (error) {
-            setUserState({
-                ...userState,
-                password: "",
-            });
-
-            const id = setTimeout(() => {
-                dispatch(clearError());
-            }, 3000);
-            return () => {
-                clearTimeout(id);
-            };
-        }
-    }, [error]);
+    useError(error, clearError, () => {
+        setUserState({
+            ...userState,
+            password: "",
+        });
+    });
 
     const onUserChange = (field: keyof RegisterCredentials) => (event: React.ChangeEvent<HTMLInputElement>) => {
         setUserState({

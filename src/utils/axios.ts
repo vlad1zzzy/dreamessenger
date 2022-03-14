@@ -1,65 +1,89 @@
-import axios, { AxiosRequestConfig } from "axios";
-import { UserTokens } from "../store/slices/user";
-import jwt_decode from "jwt-decode";
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 import config from "../../config.json";
 
 const { API_URL } = config;
 
-export const axiosPrivate = axios.create({
-    baseURL: API_URL,
-});
+export type ApiOptions = {
+    client?: AxiosInstance,
+    access?: string,
+    refresh?: string,
+}
 
-const getAccessToken = () => {
-    const { access } = JSON.parse(localStorage.getItem('user') || "{}") as UserTokens;
+type UserTokens = {
+    access: string,
+    refresh: string,
+}
 
-    return access || '';
-};
+export default class Api {
+    public client: AxiosInstance;
+    private access?: string;
+    private refresh?: string;
+    private refreshRequest: Promise<AxiosResponse<UserTokens>> | null;
 
-const refreshToken = async () => {
-    const { refresh } = JSON.parse(localStorage.getItem('user') || "{}") as UserTokens;
-
-    try {
-        const response = await axios.post(`${API_URL}/auth/token/refresh/`, {
-            refresh,
+    constructor(options: ApiOptions = {}) {
+        this.client = options.client || axios.create({
+            baseURL: API_URL,
         });
+        this.access = options.access;
+        this.refresh = options.refresh;
+        this.refreshRequest = null;
 
-        console.log(response, "REFRESH RESPONSE");
+        this.client.interceptors.request.use(
+            async (config = {} as AxiosRequestConfig) => {
+                this.updateTokens();
 
-        const { access } = response.data as UserTokens;
-        localStorage.setItem('user', JSON.stringify({ access, refresh }));
-
-        return access;
-    } catch (error) {
-        console.warn("Failed on refreshing token", error);
-    }
-};
-
-axiosPrivate.interceptors.request.use(
-    async (config = {
-        headers: {
-            "Content-Type": "application/json",
-        }
-    } as AxiosRequestConfig) => {
-        let access = getAccessToken();
-
-        let currentDate = new Date();
-        if (access) {
-            const decodedToken: { exp: number } = jwt_decode(access);
-            if (decodedToken.exp * 1000 < currentDate.getTime()) {
-                const updatedAccess = await refreshToken();
-                if (updatedAccess) {
-                    access = updatedAccess;
+                if (!this.access) {
+                    return config;
                 }
-            }
-            if (config.headers) {
-                config.headers["Authorization"] = `Bearer ${access}`;
-            }
-        }
 
-        return config;
-    },
-    (error) => {
-        return Promise.reject(error);
+                const newConfig = {
+                    headers: {},
+                    ...config,
+                };
+
+                newConfig.headers.Authorization = `Bearer ${this.access}`;
+                return newConfig;
+            },
+            e => Promise.reject(e)
+        );
+
+        this.client.interceptors.response.use(
+            r => r,
+            async error => {
+                this.updateTokens();
+
+                if (
+                    !this.refresh ||
+                    error.response.status !== 401 ||
+                    error.config.retry
+                ) {
+                    throw error;
+                }
+
+                if (!this.refreshRequest) {
+                    this.refreshRequest = this.client.post('/auth/token/refresh/', {
+                        refresh: this.refresh,
+                    });
+                }
+                const { data } = await this.refreshRequest;
+                this.access = data.access;
+
+                localStorage.setItem('user', JSON.stringify({ access: this.access, refresh: this.refresh }));
+
+                const newRequest = {
+                    ...error.config,
+                    retry: true,
+                };
+
+                return this.client(newRequest);
+            }
+        );
     }
-);
+
+    updateTokens() {
+        const { access, refresh } = JSON.parse(localStorage.getItem('user') || "{}") as UserTokens;
+        this.access ||= access;
+        this.refresh ||= refresh;
+    }
+}

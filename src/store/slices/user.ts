@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { axiosPrivate } from "../../utils/axios";
+import Api from "../../utils/axios";
+
+const { client } = new Api();
 
 export type UserCredentials = {
     username: string,
@@ -19,11 +21,6 @@ export interface UserState {
     isLoading: boolean,
     error: string,
     isAuth: boolean,
-}
-
-export type UserTokens = {
-    access: string,
-    refresh: string,
 }
 
 const getInitialCredentials = () => {
@@ -61,7 +58,7 @@ export const registerUser = createAsyncThunk(
         } = credentials;
 
         try {
-            const response = await axiosPrivate.post(`/auth/register/`, {
+            const response = await client.post(`/auth/register/`, {
                 username,
                 password,
                 first_name,
@@ -92,7 +89,7 @@ export const loginUser = createAsyncThunk(
     'user/login',
     async (credentials: LoginCredentials, { rejectWithValue }) => {
         try {
-            const response = await axiosPrivate.post(`/auth/token/login/`, credentials);
+            const response = await client.post(`/auth/token/login/`, credentials);
 
             console.log(response, "RESPONSE LOGIN");
 
