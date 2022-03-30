@@ -1,5 +1,6 @@
 export const GROUPS: BLOCK_CONTENT_TYPE[] = [
     {
+        id: 678,
         avatar: "01",
         title: "Friends Reunion",
         subtitle: "Hi Guys, Wassup!",
@@ -9,6 +10,7 @@ export const GROUPS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 978978967,
         avatar: "02",
         title: "Friends Forever",
         subtitle: "Good to see you.",
@@ -18,6 +20,7 @@ export const GROUPS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 9567,
         avatar: "03",
         title: "Crazy Cousins",
         subtitle: "What plans today?",
@@ -30,6 +33,7 @@ export const GROUPS: BLOCK_CONTENT_TYPE[] = [
 
 export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
     {
+        id: 95476,
         avatar: "04",
         title: "Raghav",
         subtitle: "Dinner?",
@@ -39,6 +43,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 945654,
         avatar: "05",
         title: "Swathi",
         subtitle: "Sure!",
@@ -48,6 +53,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 546657,
         avatar: "06",
         title: "Kiran",
         subtitle: "Hi.....",
@@ -57,6 +63,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 2,
     },
     {
+        id: 54745,
         avatar: "07",
         title: "Tejeshwini C",
         subtitle: "I will call him today.",
@@ -66,6 +73,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 95465464,
         avatar: "08",
         title: "Tejeshwini Cfladsnf;adks fkajsdnf kjasd nflkdjasnf jsdkn fkasdn fkajsdf asdbhfladkjsfldaskjfnasdkjfnka",
         subtitle: "I will call him today. kdjasfnoadkjsfnladkjsfnldkjasfbnlasdkjfbakjsdfbkjasdbfkjasdbfdkjasfbladkjsbfaksjdbfkasjdbf",
@@ -75,6 +83,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 55464564575667,
         avatar: "04",
         title: "Raghav",
         subtitle: "Dinner?",
@@ -84,6 +93,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 85637,
         avatar: "05",
         title: "Swathi",
         subtitle: "Sure!",
@@ -93,6 +103,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 567,
         avatar: "06",
         title: "Kiran",
         subtitle: "Hi.....",
@@ -102,6 +113,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 2,
     },
     {
+        id: 546,
         avatar: "07",
         title: "Tejeshwini C",
         subtitle: "I will call him today.",
@@ -111,6 +123,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 657,
         avatar: "08",
         title: "Tejeshwini Cfladsnf;adks fkajsdnf kjasd nflkdjasnf jsdkn fkasdn fkajsdf asdbhfladkjsfldaskjfnasdkjfnka",
         subtitle: "I will call him today. kdjasfnoadkjsfnladkjsfnldkjasfbnlasdkjfbakjsdfbkjasdbfkjasdbfdkjasfbladkjsbfaksjdbfkasjdbf",
@@ -120,6 +133,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 56756,
         avatar: "04",
         title: "Raghav",
         subtitle: "Dinner?",
@@ -129,6 +143,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 9235,
         avatar: "05",
         title: "Swathi",
         subtitle: "Sure!",
@@ -138,6 +153,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 3249,
         avatar: "06",
         title: "Kiran",
         subtitle: "Hi.....",
@@ -147,6 +163,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 2,
     },
     {
+        id: 7,
         avatar: "07",
         title: "Tejeshwini C",
         subtitle: "I will call him today.",
@@ -156,6 +173,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
         missed: 0,
     },
     {
+        id: 8,
         avatar: "08",
         title: "Tejeshwini Cfladsnf;adks fkajsdnf kjasd nflkdjasnf jsdkn fkasdn fkajsdf asdbhfladkjsfldaskjfnasdkjfnka",
         subtitle: "I will call him today. kdjasfnoadkjsfnladkjsfnldkjasfbnlasdkjfbakjsdfbkjasdbfkjasdbfdkjasfbladkjsbfaksjdbfkasjdbf",
@@ -167,6 +185,7 @@ export const FRIENDS: BLOCK_CONTENT_TYPE[] = [
 ];
 
 export type BLOCK_CONTENT_TYPE = {
+    id: number,
     avatar: string,
     title: string,
     subtitle: string,
@@ -331,3 +350,70 @@ export type SETTINGS_TYPE = {
     name: string,
     path: string,
 }
+
+const MESSAGES = {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "from_user": {
+                "username": "admin",
+                "first_name": "ADMIN",
+                "last_name": "ADMINOV"
+            },
+            "picture": {
+                "link": "https://dreamessenger.herokuapp.com/api/v1/picture/1/"
+            },
+            "is_edited": false,
+            "edited_at": "2022-03-17T14:26:21.275846Z",
+            "created_at": "2022-03-17T14:26:21.275869Z"
+        },
+        {
+            "from_user": {
+                "username": "vlad",
+                "first_name": "VLAD",
+                "last_name": "VLADOV"
+            },
+            "picture": {
+                "link": "https://dreamessenger.herokuapp.com/api/v1/picture/1/"
+            },
+            "is_edited": false,
+            "edited_at": "2022-03-17T14:26:21.275846Z",
+            "created_at": "2022-03-17T14:26:21.275869Z"
+        },
+        {
+            "from_user": {
+                "username": "admin",
+                "first_name": "ADMIN",
+                "last_name": "ADMINOV"
+            },
+            "picture": {
+                "link": "https://dreamessenger.herokuapp.com/api/v1/picture/1/"
+            },
+            "is_edited": false,
+            "edited_at": "2022-03-17T14:26:21.275846Z",
+            "created_at": "2022-03-17T14:26:21.275869Z"
+        }
+    ]
+};
+
+const CHATS = {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [{
+        "users": [
+            {
+                "username": "admin",
+                "first_name": "ADMIN",
+                "last_name": "ADMINOV"
+            }, {
+                "username": "vlad",
+                "first_name": "Vlad",
+                "last_name": "Kryukov"
+            }
+        ],
+        "id": 2
+    }]
+};

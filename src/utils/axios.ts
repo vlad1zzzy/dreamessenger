@@ -1,6 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 import config from "../../config.json";
+import jwtDecode from "jwt-decode";
 
 const { API_URL } = config;
 
@@ -53,6 +54,11 @@ export default class Api {
             async error => {
                 this.updateTokens();
 
+                if ((jwtDecode(this.refresh!) as { exp: number }).exp * 1000 < Date.now()) {
+                    this.removeTokens();
+                    throw error;
+                }
+
                 if (
                     !this.refresh ||
                     error.response.status !== 401 ||
@@ -85,5 +91,11 @@ export default class Api {
         const { access, refresh } = JSON.parse(localStorage.getItem('user') || "{}") as UserTokens;
         this.access ||= access;
         this.refresh ||= refresh;
+    }
+
+    removeTokens() {
+        localStorage.removeItem('user');
+        localStorage.removeItem('userCredentials');
+        this.updateTokens();
     }
 }

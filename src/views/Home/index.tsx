@@ -14,10 +14,14 @@ const Home: React.FC<HomeI> = ({}) => {
     return (
         <div className={classes.home}>
             <SearchInput />
-            <List title="Groups" content={GROUPS} />
-            <List title="Recent" content={FRIENDS} />
-            <List title="Friends" content={FRIENDS} />
-            <List title="Recent Calls" content={FRIENDS} />
+            <List title="Groups" content={GROUPS} onItemChoose={() => () => {
+            }} />
+            <List title="Recent" content={FRIENDS} onItemChoose={() => () => {
+            }} />
+            <List title="Friends" content={FRIENDS} onItemChoose={() => () => {
+            }} />
+            <List title="Recent Calls" content={FRIENDS} onItemChoose={() => () => {
+            }} />
         </div>
     );
 };

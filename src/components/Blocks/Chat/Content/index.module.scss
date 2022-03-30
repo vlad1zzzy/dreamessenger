@@ -1,0 +1,11 @@
+@import "src/mixins/scroll";
+
+.content {
+  @include scroll;
+  position: relative;
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}

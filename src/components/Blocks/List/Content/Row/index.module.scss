@@ -8,6 +8,13 @@
 
   width: 100%;
   min-height: 70px;
+  padding: 10px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #fafbff;
+    border-radius: 10px;
+  }
 
   &:after {
     content: "";

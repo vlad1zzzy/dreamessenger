@@ -1,4 +1,9 @@
+@import "src/mixins/list";
+@import "src/mixins/scroll";
+
 .chat {
+  @include list;
+
   display: flex;
   justify-content: start;
   align-items: center;
@@ -12,4 +17,6 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
 
   background: #FFF;
+
+  overflow: hidden;
 }

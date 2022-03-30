@@ -1,12 +1,12 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction, ThunkDispatch } from '@reduxjs/toolkit';
 import Api from "../../utils/axios";
 
 const { client } = new Api();
 
 export type UserCredentials = {
     username: string,
-    firstName: string,
-    lastName: string,
+    first_name: string,
+    last_name: string,
 }
 
 export type LoginCredentials = {
@@ -28,14 +28,12 @@ const getInitialCredentials = () => {
     if (!localCredentials || localCredentials === 'undefined') {
         return {
             username: "",
-            firstName: "",
-            lastName: "",
+            first_name: "",
+            last_name: "",
         };
     }
-    const credentials = JSON.parse(localCredentials) as UserCredentials;
-    console.log(credentials, "credentials");
 
-    return credentials;
+    return JSON.parse(localCredentials) as UserCredentials;
 };
 
 const initialState: UserState = {
@@ -53,19 +51,12 @@ export const registerUser = createAsyncThunk(
         const {
             username,
             password,
-            firstName: first_name,
-            lastName: last_name,
+            first_name,
+            last_name,
         } = credentials;
 
         try {
-            const response = await client.post(`/auth/register/`, {
-                username,
-                password,
-                first_name,
-                last_name,
-            });
-
-            console.log(response, "REGISTER RESPONSE");
+            await client.post(`/auth/register/`, credentials);
 
             dispatch(loginUser({
                 username,
@@ -74,12 +65,10 @@ export const registerUser = createAsyncThunk(
 
             return {
                 username,
-                firstName: first_name,
-                lastName: last_name,
+                first_name,
+                last_name,
             } as UserCredentials;
         } catch (error) {
-            // TODO errors from response
-            // const axiosError = error as AxiosError;
             throw rejectWithValue("Failed on register");
         }
     }
@@ -87,23 +76,20 @@ export const registerUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk(
     'user/login',
-    async (credentials: LoginCredentials, { rejectWithValue }) => {
+    async (credentials: LoginCredentials, { dispatch, rejectWithValue }) => {
         try {
             const response = await client.post(`/auth/token/login/`, credentials);
 
-            console.log(response, "RESPONSE LOGIN");
-
             localStorage.setItem('user', JSON.stringify(response.data));
 
-            // TODO request for user credentials
+            const { payload } = await dispatch(getUser(''));
+
             return {
                 username: credentials.username,
-                firstName: "firstname (todo login)",
-                lastName: "lastName (todo login)",
+                first_name: (payload as UserCredentials).first_name,
+                last_name: (payload as UserCredentials).last_name,
             } as UserCredentials;
         } catch (error) {
-            // TODO errors from response
-            // const axiosError = error as AxiosError;
             throw rejectWithValue("Failed on login");
         }
     }
@@ -116,6 +102,26 @@ export const logoutUser = createAsyncThunk(
         localStorage.removeItem('userCredentials');
 
         return initialState.credentials;
+    }
+);
+
+export const getUser = createAsyncThunk(
+    'user/get',
+    async (username: string | '', { rejectWithValue }) => {
+        try {
+            const url = username ? `/user/find/${username}/` : '/user/my/';
+            const response = await client.get(url);
+
+            const { first_name, last_name } = response.data;
+
+            return {
+                username: username,
+                first_name: first_name,
+                last_name: last_name,
+            } as UserCredentials;
+        } catch (error) {
+            throw rejectWithValue("Failed with getting user");
+        }
     }
 );
 
@@ -166,6 +172,12 @@ export const userSlice = createSlice({
             state.error = action.payload;
         },
         [logoutUser.fulfilled.type]: (state, action: PayloadAction<UserCredentials>) => {
+            state.isLoading = false;
+            state.error = "";
+            state.credentials = action.payload;
+            state.isAuth = false;
+        },
+        [getUser.fulfilled.type]: (state, action: PayloadAction<UserCredentials>) => {
             state.isLoading = false;
             state.error = "";
             state.credentials = action.payload;

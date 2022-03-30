@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 
 import Row from "./Row";
 
@@ -9,9 +9,10 @@ import { useScrollTop } from "../../../../hooks/useScrollTop";
 
 interface ContentI {
     content: BLOCK_CONTENT_TYPE[];
+    onItemChoose: (_: number) => MouseEventHandler<HTMLDivElement>;
 }
 
-const Content: React.FC<ContentI> = ({ content }) => {
+const Content: React.FC<ContentI> = ({ content, onItemChoose }) => {
     const { scrollTop, onScroll } = useScrollTop();
 
     return (
@@ -19,7 +20,7 @@ const Content: React.FC<ContentI> = ({ content }) => {
             className={`${classes.content} ${scrollTop > 0 ? classes["content--top"] : ''}`}
             onScroll={onScroll}
         >
-            {content.map((item, id) => (<Row key={item.title + id} content={item} />))}
+            {content.map((item) => (<Row key={item.id} content={item} onItemChoose={onItemChoose}/>))}
         </div>
     );
 };

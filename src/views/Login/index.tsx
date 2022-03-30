@@ -1,4 +1,4 @@
-import React, { FormEventHandler, useEffect, useState } from 'react';
+import React, { FormEventHandler, useState } from 'react';
 
 import classes from './index.module.scss';
 import Block from "../../components/UI/Block";
@@ -6,7 +6,7 @@ import Cubes from "../../components/UI/Cubes";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
-import { clearError, loginUser, RegisterCredentials, registerUser, UserCredentials } from "../../store/slices/user";
+import { clearError, loginUser, RegisterCredentials, registerUser } from "../../store/slices/user";
 import Icon from "../../components/UI/Icon";
 import Error from "../../components/UI/Error";
 import { useError } from "../../hooks/useError";
@@ -16,8 +16,8 @@ interface LoginI {
 }
 
 const initialUserState = {
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     username: '',
     password: '',
 };
@@ -31,7 +31,7 @@ const Login: React.FC<LoginI> = ({ isLogin }) => {
     const handleSubmit: FormEventHandler = async (event) => {
         event.preventDefault();
         if (!isLogin) {
-            await dispatch(registerUser(userState));
+            dispatch(registerUser(userState));
         } else {
             const { username, password } = userState;
             dispatch(loginUser({
@@ -61,16 +61,16 @@ const Login: React.FC<LoginI> = ({ isLogin }) => {
                 <input
                     className={classes.login__input}
                     type="text"
-                    onChange={onUserChange("firstName")}
-                    value={userState.firstName}
+                    onChange={onUserChange("first_name")}
+                    value={userState.first_name}
                     placeholder="Name" />
             </label>
             <label className={classes.login__field}>
                 <input
                     className={classes.login__input}
                     type="text"
-                    onChange={onUserChange("lastName")}
-                    value={userState.lastName}
+                    onChange={onUserChange("last_name")}
+                    value={userState.last_name}
                     placeholder="Surname" />
             </label>
         </>

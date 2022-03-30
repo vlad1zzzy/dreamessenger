@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 
 import classes from "./index.module.scss";
 import Avatar from "../../../../UI/Avatar";
@@ -8,11 +8,12 @@ import { BLOCK_CONTENT_TYPE } from "../../../../../store/temp";
 
 interface RowI {
     content: BLOCK_CONTENT_TYPE;
+    onItemChoose: (_: number) => MouseEventHandler<HTMLDivElement>
 }
 
-const Row: React.FC<RowI> = ({ content }) => {
+const Row: React.FC<RowI> = ({ content, onItemChoose }) => {
     return (
-        <div className={classes.row}>
+        <div className={classes.row} onClick={onItemChoose(content.id)}>
             <Avatar id={content.avatar} online={content.online} />
             <div className={classes.row__main}>
                 <div className={classes.row__mainTitle}>{content.title}</div>
