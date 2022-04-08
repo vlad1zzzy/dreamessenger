@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import jwtDecode from "jwt-decode";
 
 import config from "../../config.json";
-import jwtDecode from "jwt-decode";
 
 const { API_URL } = config;
 

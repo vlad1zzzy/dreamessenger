@@ -1,3 +1,73 @@
 .message {
+  display: flex;
+  gap: 10px;
 
+  &__wrapper {
+    box-sizing: content-box;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border: 5px solid black;
+
+    @media screen and (min-width: 1000px) {
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__left {
+    align-self: flex-start;
+  }
+
+  &__left > &__wrapper:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 17px solid black;
+    border-left: 15px solid transparent;
+    bottom: -5px;
+    left: -17px;
+  }
+
+  &__right {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+  }
+
+  &__right > &__wrapper {
+    border-color: #1A66FF;
+  }
+
+  &__right > &__wrapper:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 17px solid #1A66FF;
+    border-right: 15px solid transparent;
+    bottom: -5px;
+    right: -17px;
+  }
+
+  &__fail {
+    border-color: red;
+
+    &:before {
+      border-bottom-color: red;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: flex-end;
+
+    font-family: "Bahnschrift", sans-serif;
+  }
 }

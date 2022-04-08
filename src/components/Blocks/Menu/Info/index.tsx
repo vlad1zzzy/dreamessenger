@@ -1,17 +1,17 @@
 import React from 'react';
-
-import classes from "./index.module.scss";
-import Avatar from "../../../UI/Avatar";
-import Icon from "../../../UI/Icon";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../store";
+import Avatar from "../../../UI/Avatar";
+import Icon from "../../../UI/Icon";
+
+import classes from "./index.module.scss";
 
 interface InfoI {
 
 }
 
 const Info: React.FC<InfoI> = ({}) => {
-    const {first_name, last_name} = useSelector((state: RootState) => state.user.credentials)
+    const { first_name, last_name } = useSelector((state: RootState) => state.user.credentials);
 
     return (
         <div className={classes.header}>

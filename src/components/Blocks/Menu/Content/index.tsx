@@ -1,9 +1,9 @@
 import React from 'react';
+import { SETTINGS_TYPE } from "../../../../store/temp";
 
 import Row from "../../../Row";
 
 import classes from "./index.module.scss";
-import { SETTINGS_TYPE } from "../../../../store/temp";
 
 interface ContentI {
     settings: SETTINGS_TYPE[];

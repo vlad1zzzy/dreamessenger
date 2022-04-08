@@ -1,15 +1,15 @@
 import React, { FormEventHandler, useState } from 'react';
-
-import classes from './index.module.scss';
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Block from "../../components/UI/Block";
 import Cubes from "../../components/UI/Cubes";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import Error from "../../components/UI/Error";
+import Icon from "../../components/UI/Icon";
+import { useError } from "../../hooks/useError";
 import { AppDispatch, RootState } from "../../store";
 import { clearError, loginUser, RegisterCredentials, registerUser } from "../../store/slices/user";
-import Icon from "../../components/UI/Icon";
-import Error from "../../components/UI/Error";
-import { useError } from "../../hooks/useError";
+
+import classes from './index.module.scss';
 
 interface LoginI {
     isLogin: boolean;

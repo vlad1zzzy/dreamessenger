@@ -1,14 +1,14 @@
 import React, { MouseEventHandler } from 'react';
 
-import classes from "./index.module.scss";
+import { BLOCK_CONTENT_TYPE } from "../../../../../store/temp";
 import Avatar from "../../../../UI/Avatar";
 import Icon from "../../../../UI/Icon";
 
-import { BLOCK_CONTENT_TYPE } from "../../../../../store/temp";
+import classes from "./index.module.scss";
 
 interface RowI {
     content: BLOCK_CONTENT_TYPE;
-    onItemChoose: (_: number) => MouseEventHandler<HTMLDivElement>
+    onItemChoose: (_: number) => MouseEventHandler<HTMLDivElement>;
 }
 
 const Row: React.FC<RowI> = ({ content, onItemChoose }) => {

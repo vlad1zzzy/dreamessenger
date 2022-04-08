@@ -1,7 +1,7 @@
+import { ActionCreatorWithoutPayload } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store";
-import { ActionCreatorWithoutPayload } from "@reduxjs/toolkit";
 
 export const useError = (
     error: string,
@@ -23,4 +23,4 @@ export const useError = (
             };
         }
     }, [error]);
-}
+};

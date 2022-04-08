@@ -1,17 +1,70 @@
-.input {
-  position: relative;
+.form {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
 
+  width: 80%;
+}
+
+.field {
+  position: relative;
+  display: flex;
+  align-items: center;
   width: 100%;
-  height: 60px;
+  border: 1px dashed #1A66FF;
+  border-radius: 3px;
+  transition: 0.2s;
 
-  padding: 0 30px;
+  padding: 20px;
+  height: 30px;
 
-  &__field {
+  &.active {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .fake {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    margin-right: 10px;
+
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .message {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
     width: 100%;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 0 30px;
+
+    flex-grow: 1;
+
+    cursor: pointer;
+    opacity: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

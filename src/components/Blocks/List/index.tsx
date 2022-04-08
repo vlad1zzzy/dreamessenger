@@ -1,10 +1,10 @@
 import React, { MouseEventHandler } from 'react';
 
-import Content from "./Content";
-import Header from "../../UI/Header";
-import Block from "../../UI/Block";
-
 import { BLOCK_CONTENT_TYPE } from "../../../store/temp";
+import Block from "../../UI/Block";
+import Header from "../../UI/Header";
+
+import Content from "./Content";
 
 interface ListI {
     title: string,

@@ -1,10 +1,10 @@
 import React from 'react';
+import { SETTINGS_TYPE } from "../../../store/temp";
+import Block from "../../UI/Block";
+import Header from "../../UI/Header";
 
 import Content from "./Content";
-import Block from "../../UI/Block";
 import Info from "./Info";
-import Header from "../../UI/Header";
-import { SETTINGS_TYPE } from "../../../store/temp";
 
 interface MenuI {
     title: string;

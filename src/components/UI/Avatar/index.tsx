@@ -1,9 +1,9 @@
 import React from 'react';
 
-import classes from './index.module.scss';
-
 import img from '../../../assets/img/00.png';
 import Icon from "../Icon";
+
+import classes from './index.module.scss';
 
 interface AvatarI {
     id: string;

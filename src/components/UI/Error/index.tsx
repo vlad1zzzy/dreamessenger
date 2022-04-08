@@ -2,9 +2,6 @@ import React from 'react';
 
 import classes from './index.module.scss';
 
-import img from '../../../assets/img/00.png';
-import Icon from "../Icon";
-
 interface ErrorI {
     message: string,
 }

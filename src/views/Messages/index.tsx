@@ -1,31 +1,31 @@
 import React, { SyntheticEvent, useEffect, useMemo, useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import Chat from "../../components/Blocks/Chat";
+import List from "../../components/Blocks/List";
+import SearchInput from "../../components/SearchInput";
+import Error from "../../components/UI/Error";
+import Loader from "../../components/UI/Loader";
+import { useError } from "../../hooks/useError";
+import { RootState } from "../../store";
+import { getDialogueMessages } from "../../store/slices/dialogue";
+import { clearError, getDialogues } from "../../store/slices/dialogues";
+
+import { BLOCK_CONTENT_TYPE, GROUPS } from "../../store/temp";
 
 import classes from './index.module.scss';
-import SearchInput from "../../components/SearchInput";
-import List from "../../components/Blocks/List";
-import Chat from "../../components/Blocks/Chat";
-
-import { BLOCK_CONTENT_TYPE, FRIENDS, GROUPS } from "../../store/temp";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store";
-import { getDialogues, clearError, getDialogueMessages } from "../../store/slices/dialogues";
-import Loader from "../../components/UI/Loader";
-import Error from "../../components/UI/Error";
-import { useError } from "../../hooks/useError";
 
 interface MessagesI {
 
 }
 
 const Messages: React.FC<MessagesI> = ({}) => {
-    const [currentDialogId, setCurrentDialogId] = useState(2);
+    const [currentDialogId, setCurrentDialogId] = useState(-1);
     const { dialogues, isLoading, error } = useSelector((state: RootState) => state.dialogues);
     const username = useSelector((state: RootState) => state.user.credentials.username);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getDialogues());
-        dispatch(getDialogueMessages(1));
     }, []);
 
     const currentDialogUser = useMemo(() => {
@@ -55,7 +55,8 @@ const Messages: React.FC<MessagesI> = ({}) => {
     }, [dialogues]);
 
     const onDialogueChoose = (id: number) => (_: SyntheticEvent) => {
-        setCurrentDialogId(id)
+        dispatch(getDialogueMessages(id));
+        setCurrentDialogId(id);
     };
 
 
@@ -64,7 +65,7 @@ const Messages: React.FC<MessagesI> = ({}) => {
             <SearchInput />
             <List title="Groups" content={GROUPS} onItemChoose={onDialogueChoose} />
             <List title="Recent" content={dialoguesToDisplay} onItemChoose={onDialogueChoose} />
-            <Chat user={currentDialogUser} />
+            <Chat user={currentDialogUser} dialogueId={currentDialogId} />
             {isLoading && <Loader />}
             {error && <Error message={error} />}
         </div>

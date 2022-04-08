@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { SETTINGS_TYPE } from "../../store/temp";
+
 import Icon from "../UI/Icon";
 
 import classes from "./index.module.scss";
-
-import { SETTINGS_TYPE } from "../../store/temp";
 
 interface RowI {
     content: SETTINGS_TYPE;

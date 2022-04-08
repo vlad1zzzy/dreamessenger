@@ -1,8 +1,8 @@
 import React from 'react';
 
-import NavItem from "./Item";
-
 import classes from "./index.module.scss";
+
+import NavItem from "./Item";
 
 const items = ["home", "messages", "notify", "settings"];
 

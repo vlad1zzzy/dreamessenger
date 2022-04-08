@@ -1,11 +1,10 @@
 @import "src/mixins/scroll";
+@import "src/mixins/list";
 
 .content {
+  @include list;
   @include scroll;
-  position: relative;
-  flex-grow: 1;
 
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
+  padding: 30px;
+  flex-direction: column-reverse;
 }

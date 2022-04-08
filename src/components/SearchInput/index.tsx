@@ -1,9 +1,9 @@
 import React from 'react';
+import Pressable from "../Pressable";
+import Block from "../UI/Block";
 import Input from '../UI/Input';
 
 import classes from "./index.module.scss";
-import Pressable from "../Pressable";
-import Block from "../UI/Block";
 
 const SearchInput: React.FC = () => {
     return (

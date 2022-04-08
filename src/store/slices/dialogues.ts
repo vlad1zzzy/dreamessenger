@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import Api from "../../utils/axios";
 import { AxiosResponse } from "axios";
+import Api from "../../utils/axios";
 import { UserCredentials } from "./user";
 
 const { client } = new Api();
@@ -50,24 +50,6 @@ export const getDialogues = createAsyncThunk(
 );
 
 
-export const getDialogueMessages = createAsyncThunk(
-    'dialogues/messages',
-    async (id: number, { rejectWithValue }) => {
-        try {
-            const response: AxiosResponse<Dialogues> = await client.get(`/dialogue/${id}/messages/`);
-            // const img: AxiosResponse<Dialogues> = await client.get(`/api/v1/dialogue/picture/1/`);
-            //
-            // console.log("messages", response.data);
-            // console.log("img", img);
-
-            return response.data;
-        } catch (error) {
-            rejectWithValue("Failed with dialogues request");
-        }
-    }
-);
-
-
 export const dialoguesSlice = createSlice({
     name: 'dialogues',
     initialState,
@@ -89,18 +71,6 @@ export const dialoguesSlice = createSlice({
             state.isLoading = false;
             state.error = '';
             state.dialogues = action.payload;
-        },
-        [getDialogueMessages.pending.type]: (state) => {
-            state.isLoading = true;
-            state.error = '';
-        },
-        [getDialogueMessages.rejected.type]: (state, action: PayloadAction<string>) => {
-            state.isLoading = false;
-            state.error = action.payload;
-        },
-        [getDialogueMessages.fulfilled.type]: (state, action: PayloadAction<Dialogues>) => {
-            state.isLoading = false;
-            state.error = '';
         },
     },
 });

@@ -1,11 +1,11 @@
 import React from 'react';
-
-import SearchInput from "../../components/SearchInput";
 import Menu from "../../components/Blocks/Menu";
 
-import classes from './index.module.scss';
+import SearchInput from "../../components/SearchInput";
 
 import { ACCOUNT_SETTINGS, PROFILE_SETTINGS } from "../../store/temp";
+
+import classes from './index.module.scss';
 
 interface SettingsI {
 

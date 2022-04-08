@@ -1,7 +1,7 @@
 import React from 'react';
+import Icon from "../UI/Icon";
 
 import classes from "./index.module.scss";
-import Icon from "../UI/Icon";
 
 interface PressableI {
     iconName: string;

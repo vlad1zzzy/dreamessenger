@@ -1,8 +1,8 @@
 import React from 'react';
+import Pressable from "../../../Pressable";
+import Avatar from "../../../UI/Avatar";
 
 import classes from "./index.module.scss";
-import Avatar from "../../../UI/Avatar";
-import Pressable from "../../../Pressable";
 
 interface InfoI {
     first_name: string,
@@ -19,7 +19,9 @@ const Info: React.FC<InfoI> = ({ first_name, last_name, online }) => {
                 <div className={classes.header__name}>{`${first_name} ${last_name}`}</div>
                 <div className={classes.header__status}>{online ? "Online" : "Offline"}</div>
             </div>
-            <Pressable iconName="options" onClick={() => {console.log("OPTIONS");}}/>
+            <Pressable iconName="options" onClick={() => {
+                console.log("OPTIONS");
+            }} />
         </div>
     );
 };

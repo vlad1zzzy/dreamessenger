@@ -1,9 +1,9 @@
 import React from 'react';
-
-import classes from './index.module.scss';
+import List from "../../components/Blocks/List";
 import SearchInput from "../../components/SearchInput";
 import { FRIENDS, GROUPS } from "../../store/temp";
-import List from "../../components/Blocks/List";
+
+import classes from './index.module.scss';
 
 interface HomeI {
 

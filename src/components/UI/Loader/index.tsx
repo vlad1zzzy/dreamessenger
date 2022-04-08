@@ -1,10 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 import classes from "./index.module.scss";
 
 
 const Loader: React.FC = ({}) => {
-    return (
+    return ReactDOM.createPortal(
         <>
             <div className={classes.background} />
             <div className={classes.loader}>
@@ -14,7 +15,8 @@ const Loader: React.FC = ({}) => {
                     </div>
                 </div>
             </div>
-        </>
+        </>,
+        document.getElementById('loader')!
     );
 };
 

@@ -1,9 +1,9 @@
 import React from 'react';
 
+import { NOTIFY } from "../../../store/temp";
+
 import Row from "../../Row";
 import Block from "../../UI/Block";
-
-import { NOTIFY } from "../../../store/temp";
 
 import classes from "./index.module.scss";
 

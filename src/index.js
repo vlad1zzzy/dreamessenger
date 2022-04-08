@@ -1,14 +1,14 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
 
-import './index.scss';
-import './utils/svg-loader';
-
 import App from './App';
+
+import './index.scss';
 import { store } from "./store";
-import { Provider } from "react-redux";
+import './utils/svg-loader';
 
 ReactDOM.render(
     <Provider store={store}>

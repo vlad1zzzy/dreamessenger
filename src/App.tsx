@@ -1,15 +1,15 @@
 import React from 'react';
+import { useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
 import './App.scss';
-import Home from "./views/Home";
 import Sidebar from "./components/Sidebar";
+import Loader from "./components/UI/Loader";
+import { RootState } from "./store";
+import Home from "./views/Home";
+import Login from "./views/Login";
 import Messages from "./views/Messages";
 import Notify from "./views/Notify";
 import Settings from "./views/Settings";
-import Login from "./views/Login";
-import { useSelector } from "react-redux";
-import { RootState } from "./store";
-import Loader from "./components/UI/Loader";
 
 
 const App: React.FC = () => {

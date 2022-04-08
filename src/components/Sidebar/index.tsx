@@ -1,14 +1,14 @@
 import React from 'react';
-
-import Avatar from "../UI/Avatar";
-import Nav from "./Nav";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { AppDispatch } from "../../store";
+import { logoutUser } from "../../store/slices/user";
 import Pressable from "../Pressable";
 
+import Avatar from "../UI/Avatar";
+
 import classes from "./index.module.scss";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../store";
-import { useNavigate } from "react-router-dom";
-import { logoutUser } from "../../store/slices/user";
+import Nav from "./Nav";
 
 interface SidebarI {
 
