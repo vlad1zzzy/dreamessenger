@@ -55,6 +55,7 @@ export default class Api {
                 this.updateTokens();
 
                 if ((jwtDecode(this.refresh!) as { exp: number }).exp * 1000 < Date.now()) {
+                    console.log("OUTDATED REFRESH TOKEN");
                     this.removeTokens();
                     throw error;
                 }

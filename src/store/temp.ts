@@ -6,7 +6,7 @@ export const GROUPS: BLOCK_CONTENT_TYPE[] = [
         subtitle: "Hi Guys, Wassup!",
         online: false,
         time: "",
-        status: "",
+        status: "DELIVERED",
         missed: 0,
     },
     {
@@ -16,7 +16,7 @@ export const GROUPS: BLOCK_CONTENT_TYPE[] = [
         subtitle: "Good to see you.",
         online: false,
         time: "",
-        status: "",
+        status: "DELIVERED",
         missed: 0,
     },
     {
@@ -26,7 +26,7 @@ export const GROUPS: BLOCK_CONTENT_TYPE[] = [
         subtitle: "What plans today?",
         online: false,
         time: "",
-        status: "",
+        status: "DELIVERED",
         missed: 0,
     },
 ];
@@ -191,7 +191,7 @@ export type BLOCK_CONTENT_TYPE = {
     subtitle: string,
     online: boolean,
     time: string,
-    status: string,
+    status: "READ" | "SENT" | "MISSED" | "DELIVERED",
     missed: number,
 };
 

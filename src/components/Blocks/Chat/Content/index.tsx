@@ -23,11 +23,10 @@ const Content: React.FC<ContentI> = ({ messages, user }) => {
         }
     }, [messages]);
 
-    // TODO: id for messages
     return (
         <div className={classes.content} ref={chatContainer}>
             {messages.results.map((message) => <Message
-                key={message.created_at}
+                key={message.id}
                 src={message.picture?.link || fallbackPicture}
                 from={message.from_user.username === user.username}
                 createdAt={message.created_at}

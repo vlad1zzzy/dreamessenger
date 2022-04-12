@@ -12,6 +12,7 @@ interface ChatInputI {
 
 
 const ChatInput: React.FC<ChatInputI> = ({ dialogueId }) => {
+    const [isInputActive, setIsInputActive] = useState(false);
     const [inputText, setInputText] = useState("⭳");
     const inputRef = useRef<HTMLInputElement>(null);
     const dispatch = useDispatch<AppDispatch>();
@@ -38,13 +39,18 @@ const ChatInput: React.FC<ChatInputI> = ({ dialogueId }) => {
 
     return (
         <form method="post" encType="multipart/form-data" onSubmit={handleSubmit} className={classes.form}>
-            <fieldset className={classes.field}>
+            <fieldset
+                className={`${classes.field} ${isInputActive && classes.field__active}`}
+
+            >
                 <span className={classes.fake}>Choose files</span>
                 <span className={classes.message}>{inputText}</span>
                 <input type="file" name="data" accept=".jpg, .jpeg, .png" multiple
                        ref={inputRef}
                        className={classes.input}
                        onChange={handleChange}
+                       onDragEnter={() => setIsInputActive(true)}
+                       onDragLeave={() => setIsInputActive(false)}
                 />
             </fieldset>
             <Button title="send" subtitle="➤" />

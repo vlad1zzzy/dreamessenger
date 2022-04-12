@@ -11,10 +11,12 @@ import { store } from "./store";
 import './utils/svg-loader';
 
 ReactDOM.render(
-    <Provider store={store}>
-        <HashRouter>
-            <App />
-        </HashRouter>
-    </Provider>,
+    <React.StrictMode>
+        <Provider store={store}>
+            <HashRouter>
+                <App />
+            </HashRouter>
+        </Provider>
+    </React.StrictMode>,
     document.getElementById('root'),
 );

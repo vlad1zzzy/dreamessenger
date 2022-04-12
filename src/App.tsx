@@ -1,10 +1,11 @@
-import React from 'react';
-import { useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
 import './App.scss';
 import Sidebar from "./components/Sidebar";
 import Loader from "./components/UI/Loader";
-import { RootState } from "./store";
+import { AppDispatch, RootState } from "./store";
+import { getUser } from "./store/slices/user";
 import Home from "./views/Home";
 import Login from "./views/Login";
 import Messages from "./views/Messages";
@@ -14,6 +15,11 @@ import Settings from "./views/Settings";
 
 const App: React.FC = () => {
     const { isAuth, isLoading } = useSelector((state: RootState) => state.user);
+    const dispatch = useDispatch<AppDispatch>();
+
+    useEffect(() => {
+        isAuth && dispatch(getUser(""));
+    }, [isAuth]);
 
     const view =
         isAuth

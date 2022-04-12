@@ -45,9 +45,9 @@ const Messages: React.FC<MessagesI> = ({}) => {
                 id: dialog.id,
                 avatar: "04",
                 title: dialog.users[0].username,
-                subtitle: "Dinner?",
+                subtitle: "(message)",
                 online: false,
-                time: "Today, 8:56pm",
+                time: "(time)",
                 status: "READ",
                 missed: 0,
             } as BLOCK_CONTENT_TYPE;

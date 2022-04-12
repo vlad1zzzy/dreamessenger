@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const { SourceMapDevToolPlugin } = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
@@ -11,6 +12,9 @@ process.env.NODE_ENV = 'development';
 
 module.exports = _ => ({
     plugins: [
+        new SourceMapDevToolPlugin({
+            filename: "[file].map"
+        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "public/index.html"),
             filename: "./index.html",
@@ -36,6 +40,11 @@ module.exports = _ => ({
     },
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                enforce: 'pre',
+                use: ['source-map-loader'],
+            },
             {
                 test: /\.(jsx|js|tsx|ts)$/,
                 include: path.resolve(__dirname, 'src'),

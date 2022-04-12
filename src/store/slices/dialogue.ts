@@ -12,6 +12,7 @@ interface Message {
     picture: {
         link: string,
     },
+    id: number,
 }
 
 export interface Messages {

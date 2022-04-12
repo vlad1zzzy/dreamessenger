@@ -107,18 +107,12 @@ export const logoutUser = createAsyncThunk(
 
 export const getUser = createAsyncThunk(
     'user/get',
-    async (username: string | '', { rejectWithValue }) => {
+    async (usernameRequest: string | '', { rejectWithValue }) => {
         try {
-            const url = username ? `/user/find/${username}/` : '/user/my/';
+            const url = usernameRequest ? `/user/find/${usernameRequest}/` : '/user/my/';
             const response = await client.get(url);
 
-            const { first_name, last_name } = response.data;
-
-            return {
-                username: username,
-                first_name: first_name,
-                last_name: last_name,
-            } as UserCredentials;
+            return response.data as UserCredentials;
         } catch (error) {
             throw rejectWithValue("Failed with getting user");
         }
@@ -181,7 +175,6 @@ export const userSlice = createSlice({
             state.isLoading = false;
             state.error = "";
             state.credentials = action.payload;
-            state.isAuth = false;
         },
     },
 });
