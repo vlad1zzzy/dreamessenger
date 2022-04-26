@@ -5,7 +5,7 @@
   gap: 2%;
   grid-template-areas:
     "messages1 messages4 messages4"
-    "messages2 messages4 messages4"
+    "messages3 messages4 messages4"
     "messages3 messages4 messages4";
   grid-template-rows: 60px auto auto;
   grid-template-columns: repeat(3, 1fr);
@@ -16,10 +16,6 @@
     "messages3 messages4"
     "messages3 messages4";
     grid-template-columns: 2fr 3fr;
-
-    & > *:nth-child(2) {
-      display: none;
-    }
   }
 
   @media screen and (max-width: 800px) {
@@ -45,15 +41,71 @@
     "messages1 messages4 messages4"
     "messages3 messages4 messages4"
     "messages3 messages4 messages4";
+  }
 
-    & > *:nth-child(2) {
-      display: none;
-    }
+  & > *:nth-child(2) {
+    display: none;
   }
 
   @for $i from 1 through 4 {
     & > *:nth-child(#{$i}) {
       grid-area: messages#{$i};
+    }
+  }
+
+  &__suggests {
+    & > *:nth-child(2) {
+      display: initial;
+    }
+
+    grid-template-areas:
+    "messages1 messages4 messages4"
+    "messages2 messages4 messages4"
+    "messages3 messages4 messages4";
+    grid-template-rows: 60px auto auto;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media screen and (max-width: 1100px) {
+      grid-template-areas:
+    "messages1 messages4"
+    "messages2 messages4"
+    "messages3 messages4";
+      grid-template-columns: 2fr 3fr;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 100%;
+      grid-template-areas:
+            "messages4 messages4"
+            "messages4 messages4"
+            "messages4 messages4";
+
+      @for $i from 1 through 3 {
+        & > *:nth-child(#{$i}) {
+          display: none;
+        }
+      }
+
+      & > *:nth-child(5) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-height: 600px) and (min-width: 801px) {
+      grid-template-areas:
+    "messages1 messages4 messages4"
+    "messages3 messages4 messages4"
+    "messages3 messages4 messages4";
+
+      & > *:nth-child(2) {
+        display: none;
+      }
+    }
+
+    @for $i from 1 through 4 {
+      & > *:nth-child(#{$i}) {
+        grid-area: messages#{$i};
+      }
     }
   }
 }

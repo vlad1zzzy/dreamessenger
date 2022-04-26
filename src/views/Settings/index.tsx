@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Menu from "../../components/Blocks/Menu";
 
 import SearchInput from "../../components/SearchInput";
@@ -12,10 +12,11 @@ interface SettingsI {
 }
 
 const Settings: React.FC<SettingsI> = ({}) => {
+    const [, setSuggests] = useState([]);
 
     return (
         <div className={classes.settings}>
-            <SearchInput />
+            <SearchInput setSuggests={setSuggests} />
             <Menu title="Profile Settings" withHeader settings={PROFILE_SETTINGS} />
             <Menu title="Account Settings" settings={ACCOUNT_SETTINGS} />
         </div>

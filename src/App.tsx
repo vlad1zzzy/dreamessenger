@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
 import './App.scss';
+import ErrorBoundary from "./components/ErrorBoundary";
 import Sidebar from "./components/Sidebar";
 import Loader from "./components/UI/Loader";
 import { AppDispatch, RootState } from "./store";
 import { getUser } from "./store/slices/user";
-import Home from "./views/Home";
 import Login from "./views/Login";
 import Messages from "./views/Messages";
 import Notify from "./views/Notify";
@@ -27,11 +27,11 @@ const App: React.FC = () => {
             <div className="container">
                 <Sidebar />
                 <Routes>
-                    <Route path="/home" element={<Home />} />
+                    {/*<Route path="/home" element={<Home />} />*/}
                     <Route path="/messages" element={<Messages />} />
                     <Route path="/notify" element={<Notify />} />
                     <Route path="/settings" element={<Settings />} />
-                    <Route path="*" element={<Navigate to="/home" />} />
+                    <Route path="*" element={<Navigate to="/messages" />} />
                 </Routes>
             </div>
             :
@@ -42,10 +42,10 @@ const App: React.FC = () => {
             </Routes>;
 
     return (
-        <>
+        <ErrorBoundary>
             {view}
             {isLoading && <Loader />}
-        </>
+        </ErrorBoundary>
     );
 };
 

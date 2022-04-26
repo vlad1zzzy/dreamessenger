@@ -20,7 +20,10 @@ const initialUserState = {
     last_name: '',
     username: '',
     password: '',
-};
+    info: {
+        avatar: null,
+    }
+} as RegisterCredentials;
 
 
 const Login: React.FC<LoginI> = ({ isLogin }) => {

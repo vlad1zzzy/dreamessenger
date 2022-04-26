@@ -1,7 +1,7 @@
 import React from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { AppDispatch } from "../../store";
+import { AppDispatch, RootState } from "../../store";
 import { logoutUser } from "../../store/slices/user";
 import Pressable from "../Pressable";
 
@@ -15,6 +15,7 @@ interface SidebarI {
 }
 
 const Sidebar: React.FC<SidebarI> = ({}) => {
+    const userAvatar = useSelector((state: RootState) => state.user.credentials.info.avatar?.link);
     const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
 
@@ -25,7 +26,7 @@ const Sidebar: React.FC<SidebarI> = ({}) => {
 
     return (
         <div className={classes.sidebar}>
-            <Avatar id={"01"} size={"big"} />
+            <Avatar size={"big"} link={userAvatar} />
             <Nav />
             <Pressable iconName={"outdoor"} size={"big"} onClick={logout} />
         </div>

@@ -1,22 +1,22 @@
 import React from 'react';
 
-import img from '../../../assets/img/00.png';
-import Icon from "../Icon";
+import img from '../../../assets/img/fail_to_load_picture.png';
 
 import classes from './index.module.scss';
 
 interface AvatarI {
-    id: string;
     size?: "mini" | "default" | "big";
     online?: boolean,
+    link?: string,
 }
 
-const Avatar: React.FC<AvatarI> = ({ id, size = "default", online = false }) => {
+const Avatar: React.FC<AvatarI> = ({ size = "default", link }) => {
+
 
     return (
         <div className={`${classes.avatar} ${classes[`avatar_${size}`]}`}>
-            <img className={classes.avatar__img} src={img} alt="Avatar" />
-            {online && <Icon name="online" />}
+            <img className={classes.avatar__img} src={link || img} alt="Avatar" />
+            {/*{online && <Icon name="online" />}*/}
         </div>
     );
 };

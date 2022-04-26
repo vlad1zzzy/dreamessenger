@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { AxiosResponse } from "axios";
 import Api from "../../utils/axios";
 
 const { client } = new Api();
@@ -7,6 +8,11 @@ export type UserCredentials = {
     username: string,
     first_name: string,
     last_name: string,
+    info: {
+        avatar: null | {
+            link: string,
+        },
+    }
 }
 
 export type LoginCredentials = {
@@ -23,6 +29,20 @@ export interface UserState {
     isAuth: boolean,
 }
 
+export interface Users {
+    count: number,
+    next: null,
+    previous: null,
+    results: UserCredentials[],
+}
+
+export const initialUsers = {
+    count: 0,
+    next: null,
+    previous: null,
+    results: [],
+};
+
 const getInitialCredentials = () => {
     let localCredentials = localStorage.getItem('userCredentials');
     if (!localCredentials || localCredentials === 'undefined') {
@@ -30,6 +50,9 @@ const getInitialCredentials = () => {
             username: "",
             first_name: "",
             last_name: "",
+            info: {
+                avatar: null,
+            }
         };
     }
 
@@ -88,6 +111,9 @@ export const loginUser = createAsyncThunk(
                 username: credentials.username,
                 first_name: (payload as UserCredentials).first_name,
                 last_name: (payload as UserCredentials).last_name,
+                info: {
+                    avatar: (payload as UserCredentials).info.avatar
+                }
             } as UserCredentials;
         } catch (error) {
             throw rejectWithValue("Failed on login");
@@ -115,6 +141,39 @@ export const getUser = createAsyncThunk(
             return response.data as UserCredentials;
         } catch (error) {
             throw rejectWithValue("Failed with getting user");
+        }
+    }
+);
+
+
+export const changeUserAvatar = createAsyncThunk(
+    'user/avatar',
+    async (avatar: FormData, { rejectWithValue, dispatch }) => {
+        try {
+            const response = await client.post(`/user/avatar/`, avatar, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            });
+            dispatch(getUser(''));
+
+            return response.data;
+        } catch (error) {
+            throw rejectWithValue("Failed with changing avatar");
+        }
+    }
+);
+
+
+export const suggestUser = createAsyncThunk(
+    'user/suggest',
+    async (username: string, { rejectWithValue }) => {
+        try {
+            const response: AxiosResponse<Users> = await client.get(`/user/suggest/?name_substring=${username}`);
+
+            return response.data;
+        } catch (error) {
+            throw rejectWithValue("Failed with searching users");
         }
     }
 );
@@ -169,6 +228,15 @@ export const userSlice = createSlice({
             state.isLoading = false;
             state.error = "";
             state.credentials = action.payload;
+            state.isAuth = false;
+        },
+        [getUser.pending.type]: (state) => {
+            state.isLoading = true;
+        },
+        [getUser.rejected.type]: (state, action: PayloadAction<string>) => {
+            state.isLoading = false;
+            state.error = action.payload;
+            state.credentials = getInitialCredentials();
             state.isAuth = false;
         },
         [getUser.fulfilled.type]: (state, action: PayloadAction<UserCredentials>) => {

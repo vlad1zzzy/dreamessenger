@@ -8,10 +8,10 @@ import Block from "../../UI/Block";
 import Error from "../../UI/Error";
 import Loader from "../../UI/Loader";
 import Content from "./Content";
-import Info from "./Info";
-import Input from "./Input";
 
 import classes from "./index.module.scss";
+import Info from "./Info";
+import Input from "./Input";
 
 interface ChatI {
     user?: UserCredentials,
@@ -23,12 +23,17 @@ const Chat: React.FC<ChatI> = ({ user, dialogueId }) => {
 
 
     if (!user) {
-        return <Block><img src={img} alt={'Chat'} className={classes.image}/></Block>;
+        return <Block><img src={img} alt={'Chat'} className={classes.image} /></Block>;
     }
 
     return (
         <Block>
-            <Info first_name={user.first_name || "Noname"} last_name={user.last_name || "Noname"} online={true} />
+            <Info
+                first_name={user.first_name || "Noname"}
+                last_name={user.last_name || "Noname"}
+                avatar={user.info.avatar?.link}
+                online={true}
+            />
             <Content messages={messages} user={user} />
             <Input dialogueId={dialogueId} />
             {isLoading && <Loader />}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import List from "../../components/Blocks/List";
 import SearchInput from "../../components/SearchInput";
 import { FRIENDS, GROUPS } from "../../store/temp";
@@ -10,10 +10,11 @@ interface HomeI {
 }
 
 const Home: React.FC<HomeI> = ({}) => {
+    const [, setSuggests] = useState([]);
 
     return (
         <div className={classes.home}>
-            <SearchInput />
+            <SearchInput setSuggests={setSuggests} />
             <List title="Groups" content={GROUPS} onItemChoose={() => () => {
             }} />
             <List title="Recent" content={FRIENDS} onItemChoose={() => () => {

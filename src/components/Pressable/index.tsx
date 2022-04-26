@@ -6,7 +6,7 @@ import classes from "./index.module.scss";
 interface PressableI {
     iconName: string;
     size?: "big";
-    onClick: () => void;
+    onClick?: () => void;
 }
 
 const Pressable: React.FC<PressableI> = ({ iconName, size, onClick }) => {

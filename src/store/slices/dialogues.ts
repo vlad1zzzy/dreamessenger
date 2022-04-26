@@ -50,6 +50,24 @@ export const getDialogues = createAsyncThunk(
 );
 
 
+export const createDialogue = createAsyncThunk(
+    'dialogues/create',
+    async (username: string, { rejectWithValue, dispatch }) => {
+        try {
+            const response = await client.post('/dialogue/create/', {
+                with_user: username,
+            });
+
+            dispatch(getDialogues());
+
+            return response.data;
+        } catch (error) {
+            rejectWithValue("Failed with dialogues request");
+        }
+    }
+);
+
+
 export const dialoguesSlice = createSlice({
     name: 'dialogues',
     initialState,
@@ -66,11 +84,25 @@ export const dialoguesSlice = createSlice({
         [getDialogues.rejected.type]: (state, action: PayloadAction<string>) => {
             state.isLoading = false;
             state.error = action.payload;
+            state.dialogues = initialDialogues;
         },
         [getDialogues.fulfilled.type]: (state, action: PayloadAction<Dialogues>) => {
             state.isLoading = false;
             state.error = '';
             state.dialogues = action.payload;
+        },
+        [createDialogue.pending.type]: (state) => {
+            state.isLoading = true;
+            state.error = '';
+        },
+        [createDialogue.rejected.type]: (state, action: PayloadAction<string>) => {
+            state.isLoading = false;
+            state.error = action.payload;
+            state.dialogues = initialDialogues;
+        },
+        [createDialogue.fulfilled.type]: (state, action: PayloadAction<Dialogues>) => {
+            state.isLoading = false;
+            state.error = '';
         },
     },
 });

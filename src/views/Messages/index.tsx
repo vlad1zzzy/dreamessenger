@@ -8,9 +8,10 @@ import Loader from "../../components/UI/Loader";
 import { useError } from "../../hooks/useError";
 import { RootState } from "../../store";
 import { getDialogueMessages } from "../../store/slices/dialogue";
-import { clearError, getDialogues } from "../../store/slices/dialogues";
+import { clearError, createDialogue, getDialogues } from "../../store/slices/dialogues";
+import { initialUsers, Users } from "../../store/slices/user";
 
-import { BLOCK_CONTENT_TYPE, GROUPS } from "../../store/temp";
+import { BLOCK_CONTENT_TYPE } from "../../store/temp";
 
 import classes from './index.module.scss';
 
@@ -20,17 +21,22 @@ interface MessagesI {
 
 const Messages: React.FC<MessagesI> = ({}) => {
     const [currentDialogId, setCurrentDialogId] = useState(-1);
+    const [showSuggests, setShowSuggests] = useState(false);
+    const [suggests, setSuggests] = useState<Users>(initialUsers);
     const { dialogues, isLoading, error } = useSelector((state: RootState) => state.dialogues);
+    const isLoadingUser = useSelector((state: RootState) => state.user.isLoading);
     const username = useSelector((state: RootState) => state.user.credentials.username);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getDialogues());
-    }, []);
+        if (!isLoadingUser) {
+            dispatch(getDialogues());
+        }
+    }, [isLoadingUser]);
 
     const currentDialogUser = useMemo(() => {
         if (currentDialogId) {
-            const dialog = dialogues.results.find((dialog) => dialog.id === currentDialogId);
+            const dialog = dialogues?.results?.find((dialog) => dialog.id === currentDialogId);
 
             return dialog?.users.find((user) => user.username !== username);
         }
@@ -39,19 +45,42 @@ const Messages: React.FC<MessagesI> = ({}) => {
 
     useError(error, clearError);
 
+    const suggestsToDisplay = useMemo(() => {
+        return suggests.results.map((suggest, index) => {
+            const { username, first_name, last_name, info } = suggest;
+            return {
+                id: index,
+                avatar: info.avatar?.link,
+                title: username,
+                subtitle: `${first_name} ${last_name}`,
+            } as BLOCK_CONTENT_TYPE;
+        });
+    }, [suggests]);
+
+    const onSuggestChoose = (id: number) => (e: SyntheticEvent) => {
+        const username = suggestsToDisplay[id].title;
+        const dialogue = dialoguesToDisplay.find((dialogue) => dialogue.title === username);
+        if (dialogue === undefined) {
+            dispatch(createDialogue(username));
+        } else {
+            onDialogueChoose(dialogue.id)(e)
+        }
+    };
+
     const dialoguesToDisplay = useMemo(() => {
-        return dialogues.results.map((dialog) => {
+        return dialogues?.results.map((dialog) => {
+            const { username, first_name, last_name, info } = dialog.users[0];
             return {
                 id: dialog.id,
-                avatar: "04",
-                title: dialog.users[0].username,
-                subtitle: "(message)",
+                avatar: info.avatar?.link,
+                title: username,
+                subtitle: `${first_name} ${last_name}`,
                 online: false,
                 time: "(time)",
                 status: "READ",
                 missed: 0,
             } as BLOCK_CONTENT_TYPE;
-        });
+        }) || [];
     }, [dialogues]);
 
     const onDialogueChoose = (id: number) => (_: SyntheticEvent) => {
@@ -59,11 +88,21 @@ const Messages: React.FC<MessagesI> = ({}) => {
         setCurrentDialogId(id);
     };
 
+    const onRemoveSuggests = () => {
+        setShowSuggests(false);
+        setSuggests(initialUsers);
+    };
 
     return (
-        <div className={classes.messages}>
-            <SearchInput />
-            <List title="Groups" content={GROUPS} onItemChoose={onDialogueChoose} />
+        <div className={`${classes.messages} ${showSuggests && classes.messages__suggests}`}>
+            <SearchInput setSuggests={setSuggests} setShowSuggests={setShowSuggests} />
+            <List
+                title="Suggests"
+                content={suggestsToDisplay}
+                iconName="cross"
+                onItemChoose={onSuggestChoose}
+                onIconClick={onRemoveSuggests}
+            />
             <List title="Recent" content={dialoguesToDisplay} onItemChoose={onDialogueChoose} />
             <Chat user={currentDialogUser} dialogueId={currentDialogId} />
             {isLoading && <Loader />}

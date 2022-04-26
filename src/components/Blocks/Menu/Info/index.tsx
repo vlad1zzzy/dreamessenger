@@ -11,11 +11,11 @@ interface InfoI {
 }
 
 const Info: React.FC<InfoI> = ({}) => {
-    const { first_name, last_name } = useSelector((state: RootState) => state.user.credentials);
+    const { first_name, last_name, info: { avatar } } = useSelector((state: RootState) => state.user.credentials);
 
     return (
         <div className={classes.header}>
-            <Avatar id="00" size="big" />
+            <Avatar link={avatar?.link} size="big" />
             <div className={classes.header__info}>
                 <div className={classes.header__name}>{`${first_name} ${last_name}`}</div>
                 <div className={classes.header__status}>Stay home stay safe</div>

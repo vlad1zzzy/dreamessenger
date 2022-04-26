@@ -189,10 +189,10 @@ export type BLOCK_CONTENT_TYPE = {
     avatar: string,
     title: string,
     subtitle: string,
-    online: boolean,
-    time: string,
-    status: "READ" | "SENT" | "MISSED" | "DELIVERED",
-    missed: number,
+    online?: boolean,
+    time?: string,
+    status?: "READ" | "SENT" | "MISSED" | "DELIVERED",
+    missed?: number,
 };
 
 

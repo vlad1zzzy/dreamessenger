@@ -1,5 +1,7 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { ChangeEvent } from 'react';
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../store";
+import { changeUserAvatar } from "../../store/slices/user";
 
 import { SETTINGS_TYPE } from "../../store/temp";
 
@@ -12,10 +14,23 @@ interface RowI {
 }
 
 const Row: React.FC<RowI> = ({ content }) => {
-    const navigate = useNavigate();
-
+    const dispatch = useDispatch<AppDispatch>();
     const onRowClick = () => {
-        navigate(content.path.replace(":id", "1"));
+        if (content.icon === 'add-photo') {
+            const input = document.createElement('input');
+            input.type = 'file';
+            // @ts-ignore
+            input.onchange = (e: ChangeEvent<HTMLInputElement>) => {
+                const file = e.target.files?.[0];
+                if (file) {
+                    const avatar = new FormData();
+                    avatar.append('data', file);
+                    dispatch(changeUserAvatar(avatar));
+                }
+            };
+
+            input.click();
+        }
     };
 
     return (

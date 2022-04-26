@@ -9,7 +9,7 @@ import Row from "./Row";
 
 interface ContentI {
     content: BLOCK_CONTENT_TYPE[];
-    onItemChoose: (_: number) => MouseEventHandler<HTMLDivElement>;
+    onItemChoose: (_: any) => MouseEventHandler<HTMLDivElement>;
 }
 
 const Content: React.FC<ContentI> = ({ content, onItemChoose }) => {
@@ -20,7 +20,10 @@ const Content: React.FC<ContentI> = ({ content, onItemChoose }) => {
             className={`${classes.content} ${scrollTop > 0 ? classes["content--top"] : ''}`}
             onScroll={onScroll}
         >
-            {content.map((item) => (<Row key={item.id} content={item} onItemChoose={onItemChoose} />))}
+            {content.length ?
+                content.map((item) => (<Row key={item.id} content={item} onItemChoose={onItemChoose} />))
+                : "No content yet"
+            }
         </div>
     );
 };

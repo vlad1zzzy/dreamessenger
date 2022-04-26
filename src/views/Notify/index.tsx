@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Notifies from "../../components/Blocks/Notifies";
 
 import SearchInput from "../../components/SearchInput";
@@ -12,10 +12,11 @@ interface NotifyI {
 }
 
 const Notify: React.FC<NotifyI> = ({}) => {
+    const [, setSuggests] = useState([]);
 
     return (
         <div className={classes.notify}>
-            <SearchInput />
+            <SearchInput setSuggests={setSuggests} />
             <Notifies content={NOTIFIES} />
         </div>
     );

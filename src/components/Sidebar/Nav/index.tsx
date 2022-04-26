@@ -4,7 +4,7 @@ import classes from "./index.module.scss";
 
 import NavItem from "./Item";
 
-const items = ["home", "messages", "notify", "settings"];
+const items = ["messages", "notify", "settings"];
 
 interface NavI {
 

@@ -9,14 +9,16 @@ import Content from "./Content";
 interface ListI {
     title: string,
     content: BLOCK_CONTENT_TYPE[],
-    onItemChoose: (_: number) => MouseEventHandler<HTMLDivElement>;
+    iconName?: string,
+    onItemChoose: (_: any) => MouseEventHandler<HTMLDivElement>,
+    onIconClick?: () => void,
 }
 
-const List: React.FC<ListI> = ({ title, content, onItemChoose }) => {
+const List: React.FC<ListI> = ({ iconName, title, content, onItemChoose, onIconClick }) => {
     return (
         <Block>
-            <Header title={title} iconName={"options"} />
-            {content.length ? <Content content={content} onItemChoose={onItemChoose} /> : "No content yet"}
+            <Header title={title} iconName={iconName || "options"} onIconClick={onIconClick} />
+            <Content content={content} onItemChoose={onItemChoose} />
         </Block>
     );
 };

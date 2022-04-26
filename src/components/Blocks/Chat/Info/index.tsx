@@ -8,13 +8,14 @@ interface InfoI {
     first_name: string,
     last_name: string,
     online?: boolean,
+    avatar?: string,
 }
 
-const Info: React.FC<InfoI> = ({ first_name, last_name, online }) => {
+const Info: React.FC<InfoI> = ({ first_name, last_name, online, avatar }) => {
 
     return (
         <div className={classes.header}>
-            <Avatar id="00" size="big" online={online} />
+            <Avatar size="big" online={online} link={avatar} />
             <div className={classes.header__info}>
                 <div className={classes.header__name}>{`${first_name} ${last_name}`}</div>
                 <div className={classes.header__status}>{online ? "Online" : "Offline"}</div>
