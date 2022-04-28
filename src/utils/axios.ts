@@ -98,5 +98,6 @@ export default class Api {
         localStorage.removeItem('user');
         localStorage.removeItem('userCredentials');
         this.updateTokens();
+        window.location.reload();
     }
 }

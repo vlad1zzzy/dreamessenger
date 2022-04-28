@@ -15,7 +15,7 @@ interface SidebarI {
 }
 
 const Sidebar: React.FC<SidebarI> = ({}) => {
-    const userAvatar = useSelector((state: RootState) => state.user.credentials.info.avatar?.link);
+    const userAvatar = useSelector((state: RootState) => state.user.credentials.info?.avatar?.link);
     const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
 
